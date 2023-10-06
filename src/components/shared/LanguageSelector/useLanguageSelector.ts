@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import type { Languages } from '@/types'
 import { languages } from '@/data'
 import i18next from 'i18next'
@@ -22,7 +22,12 @@ export const useLanguageSelector = () => {
 
   useEffect(() => {
     const language = localStorage.getItem('language')
-    updateLanguageState(language as Languages)
+
+    if (language && language in languages) {
+      updateLanguageState(language as Languages)
+    } else {
+      updateLanguageState('en')
+    }
   }, [])
 
   return { selectedLanObj, setSelectedLanObj, updateLanguageState, languagesList }
