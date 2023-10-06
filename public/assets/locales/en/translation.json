@@ -6,5 +6,8 @@
   "authentication": "Authentication",
   "hero_token_description": "A Refresh Token is a special kind of token that can be used to obtain a new renewed access token which allows access to the protected resources. You can request for the new access tokens by using the Refresh Token in Web API until the Refresh Token is valid.",
   "get_started": "Get started",
-  "learn_more": "Learn more"
+  "learn_more": "Learn more",
+  "page_not_found": "Page not found",
+  "page_not_found_description": "The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
+  "go_back_home": "Go back home"
 }
