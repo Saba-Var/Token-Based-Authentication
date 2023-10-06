@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { Languages } from '@/types'
-import { languages } from '@/constants'
+import { languages } from '@/data'
 import i18next from 'i18next'
 
 export const useLanguageSelector = () => {
@@ -16,12 +16,7 @@ export const useLanguageSelector = () => {
 
   const languagesList = useMemo(() => {
     return Object.keys(languages).map((key) => {
-      const languageKey = key as keyof typeof languages
-      return {
-        lan: languages[languageKey].lan,
-        image: languages[languageKey].image,
-        locale: languages[languageKey].locale,
-      }
+      return languages[key as keyof typeof languages]
     })
   }, [])
 

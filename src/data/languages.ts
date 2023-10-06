@@ -1,4 +1,4 @@
-import { britainFlag, georgiaFlag } from '../../public'
+import { britainFlag, georgiaFlag } from '@/assets'
 
 export const languages = {
   ka: {

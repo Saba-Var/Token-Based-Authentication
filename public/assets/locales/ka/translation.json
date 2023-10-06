@@ -1,5 +1,10 @@
 {
   "log_in": "შესვლა",
   "sign_up": "რეგისტრაცია",
-  "dont_have_an_account": "არ გაქვს ანგარიში"
+  "dont_have_an_account": "არ გაქვს ანგარიში",
+  "token_based": "ტოკენზე დაფუძნებული",
+  "authentication": "ავთენტიფიკაცია",
+  "hero_token_description": "refresh token არის სპეციალური ტოკენი, რომელიც შეიძლება გამოყენებულ იქნას , რომ მოიპოვო განახლებული წვდომა დაცულ რესურსებზე. შენ შეგიძლია მოითხოვო ახალი access token, refresh token-ს გამოყენებით Web API-დან, სანამ refresh token იქნება ვალიდური.",
+  "get_started": "დაწყება",
+  "learn_more": "გაიგეთ მეტი"
 }

@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+}
+
+.ease-anm {
+  @apply transition-all duration-300 ease-in;
+}
+
+.disabled-btn {
+  @apply !bg-gray-400 gap-1 !cursor-not-allowed !text-white hover:!bg-gray-500 focus:!ring-gray-400;
+}
+
+.secondary-btn {
+  @apply rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50;
+}
+
+.primary-btn {
+  @apply rounded-md bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+}
+
+.danger-btn {
+  @apply rounded-md bg-red-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600;
+}
+
+.soft-btn {
+  @apply rounded-md bg-indigo-50 px-4 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100;
+}
+
+html {
+  scroll-behavior: smooth;
+}
