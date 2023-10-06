@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react'
+import { MemoryRouter } from 'react-router'
 import '../src/index.css'
+import React from 'react'
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +14,13 @@ const preview: Preview = {
     },
     layout: 'centered',
   },
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 }
 
 export default preview

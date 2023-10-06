@@ -34,6 +34,13 @@ const meta: Meta<typeof Button> = {
       description: 'Whether to show the loading indicator',
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'The Button component is used to trigger an action',
+      },
+    },
+  },
 }
 
 export default meta
