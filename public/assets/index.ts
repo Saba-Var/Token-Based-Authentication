@@ -1,1 +1,1 @@
-export * from './images'
+export * from '../../src/assets/images'

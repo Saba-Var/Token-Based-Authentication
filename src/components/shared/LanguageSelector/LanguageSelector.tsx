@@ -14,7 +14,7 @@ const LanguageSelector = () => {
           <div className='relative'>
             <Listbox.Button className='relative md:w-[165px] cursor-pointer rounded-md sm:border sm:border-gray-100 bg-white py-2 pl-3 pr-10 text-left sm:shadow-sm  sm:text-sm'>
               <div className='flex items-center'>
-                <div className='relative bg-red-900 h-6 w-6 rounded-full'>
+                <div className='bg-red-900 h-6 w-6 rounded-full'>
                   <img
                     src={selectedLanObj.image}
                     className='w-full h-full rounded-full'
@@ -43,7 +43,7 @@ const LanguageSelector = () => {
             >
               <Listbox.Options className='absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
                 {languagesList.map((language) => (
-                  <button key={language.lan} rel='preload'>
+                  <button className='w-full' key={language.lan}>
                     <Listbox.Option
                       onClick={() => updateLanguageState(language.locale)}
                       className={({ active }) =>
@@ -58,9 +58,9 @@ const LanguageSelector = () => {
                         return (
                           <>
                             <div className='flex items-center py-2 pl-3 pr-9'>
-                              <div className='relative h-6 w-6 flex-shrink-0 rounded-full'>
+                              <div className='h-6 w-6  flex-shrink-0 rounded-full'>
                                 <img
-                                  className='rounded-full'
+                                  className='w-full h-full rounded-full'
                                   alt={`${language.lan} flag`}
                                   src={language.image}
                                 />
