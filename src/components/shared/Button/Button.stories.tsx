@@ -7,6 +7,7 @@ const meta: Meta<typeof Button> = {
   args: {
     title: 'Button',
   },
+  tags: ['autodocs'],
   argTypes: {
     stylesType: {
       description: 'The type of button to render',
