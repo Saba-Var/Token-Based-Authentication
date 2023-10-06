@@ -6,5 +6,8 @@
   "authentication": "ავთენტიფიკაცია",
   "hero_token_description": "refresh token არის სპეციალური ტოკენი, რომელიც შეიძლება გამოყენებულ იქნას , რომ მოიპოვო განახლებული წვდომა დაცულ რესურსებზე. შენ შეგიძლია მოითხოვო ახალი access token, refresh token-ს გამოყენებით Web API-დან, სანამ refresh token იქნება ვალიდური.",
   "get_started": "დაწყება",
-  "learn_more": "გაიგეთ მეტი"
+  "learn_more": "გაიგეთ მეტი",
+  "page_not_found": "გვერდი ვერ მოიძებნა",
+  "page_not_found_description": "გვერდი რომელსაც ეძებ შეიძლება წაიშალა, მისი სახელი შეიცვალა ან დროებით მიუწვდომელია",
+  "go_back_home": "Go back home"
 }
