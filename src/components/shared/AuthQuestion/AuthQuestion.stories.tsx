@@ -4,6 +4,7 @@ import { AuthQuestion } from '@/components'
 const meta: Meta<typeof AuthQuestion> = {
   component: AuthQuestion,
   title: 'Core/AuthQuestion',
+  tags: ['autodocs'],
   args: {
     linkText: 'Sign up',
     questionText: 'Don’t have an account',
