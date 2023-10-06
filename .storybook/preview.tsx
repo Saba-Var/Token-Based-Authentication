@@ -1,7 +1,9 @@
 import type { Preview } from '@storybook/react'
+import { I18nextProvider } from 'react-i18next'
 import { MemoryRouter } from 'react-router'
+import React, { Suspense } from 'react'
+import i18n from '../i18n'
 import '../src/index.css'
-import React from 'react'
 
 const preview: Preview = {
   parameters: {
@@ -16,9 +18,13 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
+      <Suspense fallback={<div>loading translations...</div>}>
+        <MemoryRouter>
+          <I18nextProvider i18n={i18n}>
+            <Story />
+          </I18nextProvider>
+        </MemoryRouter>
+      </Suspense>
     ),
   ],
 }
