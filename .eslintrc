@@ -36,5 +36,6 @@
     "react/react-in-jsx-scope": "off",
     "import/no-named-as-default-member": "off",
     "react/prop-types": "off"
-  }
+  },
+  "ignorePatterns": ["!.storybook"]
 }
