@@ -1,8 +1,13 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Popover, Transition } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
+import { AuthQuestion } from '@/components'
+import { Link } from 'react-router-dom'
 import { Fragment } from 'react'
 
 const Header = () => {
+  const { t } = useTranslation()
+
   return (
     <Popover className='relative bg-white shadow'>
       <div className='mx-auto w-screen shadow-md px-4 sm:px-6 fixed bg-white z-[99] top-0 left-0'>
@@ -23,19 +28,19 @@ const Header = () => {
             </div>
 
             <div className='hidden md:block'>
-              <a
-                href='/log-in'
+              <Link
+                to='/auth/log-in'
                 className='ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
               >
-                {'auth:log-in'}
-              </a>
+                {t('log_in')}
+              </Link>
 
-              <a
-                href='/sign-up'
+              <Link
+                to='/sign-up'
                 className='ml-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700'
               >
                 {'auth:sign-up'}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -75,10 +80,14 @@ const Header = () => {
                   href='/log-in'
                   className='flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700'
                 >
-                  auth:log-in
+                  {t('log_in')}
                 </a>
 
-                {/* <AuthQuestion type='log-in-to' /> */}
+                <AuthQuestion
+                  questionText='dont_have_an_account'
+                  redirectUrl='/auth/sign-up'
+                  linkText='sign_up'
+                />
               </div>
             </div>
           </div>
