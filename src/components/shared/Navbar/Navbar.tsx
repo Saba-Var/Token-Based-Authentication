@@ -1,11 +1,11 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { AuthQuestion, LanguageSelector } from '@/components'
 import { Popover, Transition } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
-import { AuthQuestion } from '@/components'
 import { Link } from 'react-router-dom'
 import { Fragment } from 'react'
 
-const Header = () => {
+const Navbar = () => {
   const { t } = useTranslation()
 
   return (
@@ -13,13 +13,14 @@ const Header = () => {
       <div className='mx-auto w-screen shadow-md px-4 sm:px-6 fixed bg-white z-[99] top-0 left-0'>
         <div className='flex items-center justify-between py-6 md:justify-start md:space-x-10'>
           <div className='flex justify-start lg:w-0 lg:flex-1'>
-            <p className='text-4xl cursor-pointer font-bold tracking-tight text-gray-900'>
-              Semester
+            <p className='text-4xl cursor-pointer items-center flex font-bold tracking-tight text-gray-900'>
+              Auth
+              <span>🔒</span>
             </p>
           </div>
 
           <div className='w-full flex items-center justify-end'>
-            {/* <LanguageSelector /> */}
+            <LanguageSelector />
 
             <div className='-my-2 -mr-2 md:hidden'>
               <Popover.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500'>
@@ -39,7 +40,7 @@ const Header = () => {
                 to='/sign-up'
                 className='ml-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700'
               >
-                {'auth:sign-up'}
+                {t('sign_up')}
               </Link>
             </div>
           </div>
@@ -64,7 +65,8 @@ const Header = () => {
               <div className='flex items-center justify-between'>
                 <div className='flex justify-start lg:w-0 lg:flex-1'>
                   <p className='text-4xl cursor-pointer font-bold tracking-tight text-gray-900'>
-                    Semester
+                    Auth
+                    <span>🔒</span>
                   </p>
                 </div>
                 <div className='-mr-2'>
@@ -76,12 +78,12 @@ const Header = () => {
             </div>
             <div className='space-y-6 py-6 px-5'>
               <div>
-                <a
-                  href='/log-in'
+                <Link
+                  to='/auth/log-in'
                   className='flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700'
                 >
                   {t('log_in')}
-                </a>
+                </Link>
 
                 <AuthQuestion
                   questionText='dont_have_an_account'
@@ -97,4 +99,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Navbar
