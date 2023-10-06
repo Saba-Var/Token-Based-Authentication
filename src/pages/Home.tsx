@@ -1,8 +1,11 @@
-import { useTranslation } from 'react-i18next'
+import { Header } from '@/components'
 
 const Home = () => {
-  const { t } = useTranslation()
-  return <div>{t('hello')}</div>
+  return (
+    <div>
+      <Header />
+    </div>
+  )
 }
 
 export default Home
