@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
 
       {children}
 
-      {disabled && showLoadingIndicator && (
+      {showLoadingIndicator && (
         <span className='w-5 h-5'>
           <LoadingIcon styles='h-5 w-5' />
         </span>

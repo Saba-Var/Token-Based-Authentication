@@ -6,9 +6,7 @@ const RootLayout = () => {
     <>
       <Navbar />
 
-      <div className='bg-red-800'>
-        <Outlet />
-      </div>
+      <Outlet />
     </>
   )
 }

@@ -21,7 +21,7 @@ export const useLanguageSelector = () => {
   }, [])
 
   useEffect(() => {
-    const language = localStorage.getItem('language') || 'en'
+    const language = localStorage.getItem('language')
     updateLanguageState(language as Languages)
   }, [])
 
