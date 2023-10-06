@@ -9,7 +9,7 @@ export const useLanguageSelector = () => {
   )
 
   const updateLanguageState = (lan: Languages) => {
-    i18next.changeLanguage(lan)
+    // i18next.changeLanguage(lan)
     setSelectedLanObj(languages[lan as keyof typeof languages])
     localStorage.setItem('language', lan)
   }
@@ -21,7 +21,7 @@ export const useLanguageSelector = () => {
   }, [])
 
   useEffect(() => {
-    const language = localStorage.getItem('language') || 'en'
+    const language = localStorage.getItem('language')
     updateLanguageState(language as Languages)
   }, [])
 
