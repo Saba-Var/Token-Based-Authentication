@@ -1,11 +1,11 @@
+import { tokenAuthFlowEn, tokenAuthFlowKa } from '@/assets'
 import { GridBackground, Button } from '@/components'
-import { Link, useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { tokenAuthFlow } from '@/assets'
+import { Link } from 'react-router-dom'
+import useHome from './useHome'
+import i18next from 'i18next'
 
 const Home = () => {
-  const navigate = useNavigate()
-  const { t } = useTranslation()
+  const { navigate, t } = useHome()
 
   return (
     <div className='relative pt-14 lg:flex items-center isolate overflow-hidden bg-white min-h-screen'>
@@ -44,7 +44,7 @@ const Home = () => {
               <img
                 className='w-full lg:w-[40vw] rounded-md shadow-2xl ring-1 ring-gray-900/10'
                 alt='authentication flow'
-                src={tokenAuthFlow}
+                src={i18next.language === 'ka' ? tokenAuthFlowKa : tokenAuthFlowEn}
               />
             </div>
           </div>

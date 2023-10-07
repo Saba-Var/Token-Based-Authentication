@@ -1,2 +1,2 @@
-export { default as NotFound } from './NotFound'
-export { default as Home } from './Home'
+export * from './home'
+export * from './404'

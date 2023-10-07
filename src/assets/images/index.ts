@@ -1,3 +1,4 @@
-export { default as tokenAuthFlow } from './token-auth-flow.png'
+export { default as tokenAuthFlowEn } from './token-auth-flow-en.png'
+export { default as tokenAuthFlowKa } from './token-auth-flow-ka.png'
 export { default as georgiaFlag } from './georgian-flag.png'
 export { default as britainFlag } from './britain-flag.png'
