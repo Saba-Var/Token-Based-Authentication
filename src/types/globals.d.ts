@@ -17,7 +17,7 @@ export type ResponseMessage = {
 }
 
 export type SignUpFormValues = {
-  confirmPassword: string
+  passwordConfirmation: string
   password: string
   username: string
   email: string

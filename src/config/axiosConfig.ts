@@ -4,5 +4,4 @@ export const axiosConfig = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
-  withCredentials: true,
 }

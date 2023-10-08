@@ -25,5 +25,7 @@
   "username": "Username",
   "email": "Email",
   "password": "Password",
-  "confirmPassword": "Confirm password"
+  "passwordConfirmation": "Confirm password",
+  "username_is_taken": "Username is already taken",
+  "email_is_taken": "Email is already taken"
 }

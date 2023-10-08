@@ -25,5 +25,7 @@
   "username": "სახელი",
   "email": "ელ-ფოსტა",
   "password": "პაროლი",
-  "confirmPassword": "პაროლის დადასტურება"
+  "passwordConfirmation": "პაროლის დადასტურება",
+  "username_is_taken": "ეს სახელი უკვე არსებობს",
+  "email_is_taken": "ეს ელ-ფოსტა უკვე არსებობს"
 }

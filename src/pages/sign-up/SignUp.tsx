@@ -3,7 +3,7 @@ import { FormProvider } from 'react-hook-form'
 import useSignUp from './useSignUp'
 
 const SignUp = () => {
-  const { form, handleSubmit, submitHandler, t, userRegistering } = useSignUp()
+  const { form, handleSubmit, submitHandler, t, userRegistering, isValid } = useSignUp()
 
   return (
     <>
@@ -12,11 +12,11 @@ const SignUp = () => {
           <TextInputField name='username' />
           <TextInputField name='email' />
           <TextInputField name='password' type='password' />
-          <TextInputField name='confirmPassword' type='password' />
+          <TextInputField name='passwordConfirmation' type='password' />
 
           <Button
             showLoadingIndicator={userRegistering}
-            disabled={userRegistering}
+            disabled={userRegistering || !isValid}
             title={t('sign-up')}
             className='mt-4'
             type='submit'

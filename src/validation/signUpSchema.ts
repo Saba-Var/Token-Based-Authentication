@@ -11,7 +11,7 @@ export const signUpSchema = Yup.object({
 
   password: Yup.string().required('password-required').min(6, 'password-min'),
 
-  confirmPassword: Yup.string()
+  passwordConfirmation: Yup.string()
     .oneOf([Yup.ref('password'), undefined], 'password-match')
     .required('confirmPassword-required'),
 })

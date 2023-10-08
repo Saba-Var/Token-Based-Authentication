@@ -36,10 +36,7 @@ const Navbar = () => {
                 {t('log_in')}
               </Link>
 
-              <Link
-                to='/auth/sign-up'
-                className='ml-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700'
-              >
+              <Link to='/auth/sign-up' className='ml-6 primary-btn'>
                 {t('sign_up')}
               </Link>
             </div>

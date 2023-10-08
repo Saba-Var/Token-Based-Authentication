@@ -10,14 +10,12 @@ import { useState } from 'react'
 const useSignUp = () => {
   const [signUpSuccess, setSignUpSuccess] = useState(false)
 
-  const { mutate, isLoading: userRegistering } = useMutation(registerUSer)
-
   const { t } = useTranslation()
 
   const form = useForm({
     resolver: yupResolver(signUpSchema),
     defaultValues: {
-      confirmPassword: '',
+      passwordConfirmation: '',
       password: '',
       username: '',
       email: '',
@@ -25,13 +23,44 @@ const useSignUp = () => {
     mode: 'onTouched',
   })
 
-  const { handleSubmit, reset: resetForm } = form
+  const {
+    formState: { isValid },
+    reset: resetForm,
+    handleSubmit,
+    setError,
+  } = form
+
+  const { mutate: registerUserMutation, isLoading: userRegistering } = useMutation(registerUSer)
+
+  const setFieldErrors = (error: any) => {
+    const message = error?.response?.data?.message
+
+    if (message.includes('username')) {
+      setError('username', {
+        type: 'manual',
+        message: t('username_is_taken'),
+      })
+    }
+
+    if (message.includes('email')) {
+      setError('email', {
+        type: 'manual',
+        message: t('email_is_taken'),
+      })
+    }
+  }
 
   const submitHandler: SubmitHandler<SignUpFormValues> = (values) => {
-    mutate(values, {
+    registerUserMutation(values, {
       onSuccess: () => {
         resetForm()
         setSignUpSuccess(true)
+      },
+
+      onError: (error: any) => {
+        if (error?.response?.status === 409) {
+          setFieldErrors(error)
+        }
       },
     })
   }
@@ -42,6 +71,7 @@ const useSignUp = () => {
     submitHandler,
     signUpSuccess,
     handleSubmit,
+    isValid,
     form,
     t,
   }
