@@ -21,5 +21,9 @@
   "password-required": "პაროლი სავალდებულოა",
   "password-min": "პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს",
   "password-match": "პაროლები არ ემთხვევა",
-  "confirmPassword-required": "პაროლის დადასტურება სავალდებულოა"
+  "confirmPassword-required": "პაროლის დადასტურება სავალდებულოა",
+  "username": "სახელი",
+  "email": "ელ-ფოსტა",
+  "password": "პაროლი",
+  "confirmPassword": "პაროლის დადასტურება"
 }

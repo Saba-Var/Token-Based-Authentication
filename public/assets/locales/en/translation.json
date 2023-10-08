@@ -21,5 +21,9 @@
   "password-required": "Password is required",
   "password-min": "Password must include min 6 characters",
   "password-match": "Passwords doesn't match",
-  "confirmPassword-required": "Confirm password is required"
+  "confirmPassword-required": "Confirm password is required",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm password"
 }

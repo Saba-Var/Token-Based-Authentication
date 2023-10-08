@@ -1,6 +1,7 @@
 import { RootLayout, AuthPageLayout } from '@/components'
 import { createBrowserRouter } from 'react-router-dom'
 import { Home, NotFound, SignUp } from '@/pages'
+import SuspenseItself from './SuspenseItself'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'sign-up',
-        element: <SignUp />,
+        element: (
+          <SuspenseItself>
+            <SignUp />
+          </SuspenseItself>
+        ),
       },
       {
         path: 'sign-in',
