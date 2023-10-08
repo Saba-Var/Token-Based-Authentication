@@ -1,5 +1,5 @@
 import { tokenAuthFlowEn, tokenAuthFlowKa } from '@/assets'
-import { GridBackground, Button } from '@/components'
+import { GridBackgroundIcon, Button } from '@/components'
 import { Link } from 'react-router-dom'
 import useHome from './useHome'
 import i18next from 'i18next'
@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className='relative pt-14 lg:flex items-center isolate overflow-hidden bg-white min-h-screen'>
-      <GridBackground />
+      <GridBackgroundIcon />
 
       <div className='mx-auto flex-col lg:flex-row flex lg:justify-center px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-20 2xl:pb-40 2xl:pt-40'>
         <div className='mx-auto flex flex-col justify-center max-w-4xl lg:max-w-xl 2xl:max-w-2xl 3xl:max-w-3xl lg:mx-0 lg:flex-shrink-0'>
