@@ -9,5 +9,7 @@
   "learn_more": "გაიგეთ მეტი",
   "page_not_found": "გვერდი ვერ მოიძებნა",
   "page_not_found_description": "გვერდი რომელსაც ეძებ შეიძლება წაიშალა, მისი სახელი შეიცვალა ან დროებით მიუწვდომელია",
-  "go_back_home": "Go back home"
+  "go_back_home": "Go back home",
+  "sign-in": "შესვლა",
+  "sign-up": "რეგისტრაცია"
 }

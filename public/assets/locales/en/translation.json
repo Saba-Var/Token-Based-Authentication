@@ -9,5 +9,8 @@
   "learn_more": "Learn more",
   "page_not_found": "Page not found",
   "page_not_found_description": "The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
-  "go_back_home": "Go back home"
+  "go_back_home": "Go back home",
+  "sign-in": "Sign in",
+  "sign-up": "Sign up",
+  "already_have_an_account": "Already have an account"
 }

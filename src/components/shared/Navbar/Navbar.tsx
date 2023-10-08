@@ -30,14 +30,14 @@ const Navbar = () => {
 
             <div className='hidden md:block'>
               <Link
-                to='/auth/log-in'
+                to='/auth/sign-in'
                 className='ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
               >
                 {t('log_in')}
               </Link>
 
               <Link
-                to='/sign-up'
+                to='/auth/sign-up'
                 className='ml-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700'
               >
                 {t('sign_up')}
