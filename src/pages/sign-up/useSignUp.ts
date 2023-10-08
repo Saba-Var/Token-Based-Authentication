@@ -8,7 +8,7 @@ import { registerUSer } from '@/services'
 import { useState } from 'react'
 
 const useSignUp = () => {
-  const [signUpSuccess, setSignUpSuccess] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
 
   const { t } = useTranslation()
 
@@ -54,7 +54,7 @@ const useSignUp = () => {
     registerUserMutation(values, {
       onSuccess: () => {
         resetForm()
-        setSignUpSuccess(true)
+        setShowSuccessModal(true)
       },
 
       onError: (error: any) => {
@@ -66,10 +66,10 @@ const useSignUp = () => {
   }
 
   return {
-    setSignUpSuccess,
+    setShowSuccessModal,
+    showSuccessModal,
     userRegistering,
     submitHandler,
-    signUpSuccess,
     handleSubmit,
     isValid,
     form,
