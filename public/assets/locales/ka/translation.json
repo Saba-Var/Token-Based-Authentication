@@ -11,5 +11,6 @@
   "page_not_found_description": "გვერდი რომელსაც ეძებ შეიძლება წაიშალა, მისი სახელი შეიცვალა ან დროებით მიუწვდომელია",
   "go_back_home": "Go back home",
   "sign-in": "შესვლა",
-  "sign-up": "რეგისტრაცია"
+  "sign-up": "რეგისტრაცია",
+  "already_have_an_account": "უკვე გაქვს ანგარიში"
 }
