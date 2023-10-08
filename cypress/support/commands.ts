@@ -10,7 +10,6 @@ Cypress.Commands.add('fillSignUpForm', () => {
 })
 
 Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
-  cy.intercept('/dummy').as('dummy')
   cy.intercept('POST', `${BACKEND_BASE_URI}/auth/sign-up`, {
     statusCode: 409,
     body: {
@@ -18,11 +17,12 @@ Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
     },
   })
   cy.fillSignUpForm()
-  cy.get('@submit-sign-up').click({
-    force: true,
-  })
-  cy.get(`[data-cy='${fieldName}-validation']`).should(
-    'contain',
-    `${fieldName[0].toUpperCase() + fieldName.slice(1)} is already taken`,
-  )
+  cy.get('@submit-sign-up')
+    .click({
+      force: true,
+    })
+    .wait(10000)
+  cy.get(`[data-cy='${fieldName}-validation']`)
+    .should('contain', `${fieldName[0].toUpperCase() + fieldName.slice(1)} is already taken`)
+    .wait(10000)
 })
