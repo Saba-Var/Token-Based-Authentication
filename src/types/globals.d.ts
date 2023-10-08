@@ -11,3 +11,14 @@ export type AuthQuestionProps = {
   redirectUrl: string
   linkText: string
 }
+
+export type ResponseMessage = {
+  message: string
+}
+
+export type SignUpFormValues = {
+  confirmPassword: string
+  password: string
+  username: string
+  email: string
+}
