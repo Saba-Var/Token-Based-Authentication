@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006 -s ./public",
-    "build-storybook": "storybook build -s public"
+    "build-storybook": "storybook build -s public",
+    "cypress:open": "cypress open"
   },
   "lint-staged": {
     "**/*.{js,tsx,ts,tsx}": [
@@ -65,6 +66,7 @@
     "@typescript-eslint/parser": "^6.7.4",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
+    "cypress": "^13.3.0",
     "eslint": "^8.50.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-react-hooks": "^4.6.0",
