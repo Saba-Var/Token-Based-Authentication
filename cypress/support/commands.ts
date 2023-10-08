@@ -8,7 +8,7 @@ Cypress.Commands.add('fillSignUpForm', () => {
 })
 
 Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
-  cy.intercept('POST', `${Cypress.env('API_BASE_URI')}/auth/sign-up`, {
+  cy.intercept('POST', `${Cypress.env('CYPRESS_API_BASE_URI')}/auth/sign-up`, {
     statusCode: 409,
     body: {
       message: `${fieldName} is taken`,
