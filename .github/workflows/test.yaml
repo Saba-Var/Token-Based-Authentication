@@ -14,11 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        env:
-          CYPRESS_API_BASE_URI: https://token-based-authentication-api.vercel.app
         with:
           build: npm run build
           start: npm run dev

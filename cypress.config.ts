@@ -7,7 +7,4 @@ export default defineConfig({
     viewportWidth: 1920,
     baseUrl: 'http://localhost:5173',
   },
-  env: {
-    CYPRESS_API_BASE_URI: 'https://token-based-authentication-api.vercel.app',
-  },
 })
