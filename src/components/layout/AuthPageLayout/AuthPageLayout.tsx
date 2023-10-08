@@ -15,6 +15,7 @@ const AuthPageWrapper = () => {
       >
         <div className='absolute top-4 flex gap-3'>
           <HomeIcon
+            data-cy='home-icon'
             className='cursor-pointer w-7 h-7 lg:w-10 lg:h-10 opacity-70'
             onClick={navigateToHome}
           />
