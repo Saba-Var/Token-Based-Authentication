@@ -50,6 +50,7 @@ describe('Sign up page', () => {
   })
 
   it('Should submit the form if it is valid', () => {
+    cy.intercept('/dummy').as('dummy')
     cy.intercept('POST', `${BACKEND_BASE_URI}/auth/sign-up`, {
       statusCode: 200,
     })

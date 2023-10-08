@@ -10,6 +10,7 @@ Cypress.Commands.add('fillSignUpForm', () => {
 })
 
 Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
+  cy.intercept('/dummy').as('dummy')
   cy.intercept('POST', `${BACKEND_BASE_URI}/auth/sign-up`, {
     statusCode: 409,
     body: {
