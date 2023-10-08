@@ -7,6 +7,7 @@ import { SetState } from '@/types'
 const meta: Meta<typeof SuccessModal> = {
   component: SuccessModal,
   title: 'Core/SuccessModal',
+  tags: ['autodocs'],
   args: {
     show: false,
     closeWithOverlay: true,
