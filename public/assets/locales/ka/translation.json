@@ -12,5 +12,14 @@
   "go_back_home": "Go back home",
   "sign-in": "შესვლა",
   "sign-up": "რეგისტრაცია",
-  "already_have_an_account": "უკვე გაქვს ანგარიში"
+  "already_have_an_account": "უკვე გაქვს ანგარიში",
+  "username-required": "სახელი სავალდებულოა",
+  "username-min": "სახელი უნდა შეიცავდეს მინიმუმ 3 სიმბოლოს",
+  "username-max": "სახელი უნდა შეიცავდეს მაქსიმუმ 30 სიმბოლოს",
+  "email-required": "ელ-ფოსტა სავალდებულოა",
+  "valid-email": "შეიყვანე ვალიდური ელ-ფოსტა",
+  "password-required": "პაროლი სავალდებულოა",
+  "password-min": "პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს",
+  "password-match": "პაროლები არ ემთხვევა",
+  "confirmPassword-required": "პაროლის დადასტურება სავალდებულოა"
 }

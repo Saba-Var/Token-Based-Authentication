@@ -12,5 +12,14 @@
   "go_back_home": "Go back home",
   "sign-in": "Log in",
   "sign-up": "Sign up",
-  "already_have_an_account": "Already have an account"
+  "already_have_an_account": "Already have an account",
+  "username-required": "Username is required",
+  "username-min": "Username must include min 3 characters",
+  "username-max": "Username must include max 30 characters",
+  "email-required": "Email is required",
+  "valid-email": "Enter a valid email address",
+  "password-required": "Password is required",
+  "password-min": "Password must include min 6 characters",
+  "password-match": "Passwords doesn't match",
+  "confirmPassword-required": "Confirm password is required"
 }
