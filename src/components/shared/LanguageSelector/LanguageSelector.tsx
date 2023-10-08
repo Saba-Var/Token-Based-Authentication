@@ -12,17 +12,23 @@ const LanguageSelector = () => {
       {({ open }) => (
         <>
           <div className='relative'>
-            <Listbox.Button className='relative md:w-[165px] cursor-pointer rounded-md sm:border sm:border-gray-100 bg-white py-2 pl-3 pr-10 text-left sm:shadow-sm  sm:text-sm'>
+            <Listbox.Button
+              data-cy='language-selector'
+              className='relative md:w-[165px] cursor-pointer rounded-md sm:border sm:border-gray-100 bg-white py-2 pl-3 pr-10 text-left sm:shadow-sm  sm:text-sm'
+            >
               <div className='flex items-center'>
                 <div className='bg-red-900 h-6 w-6 rounded-full'>
                   <img
                     src={selectedLanObj.image}
                     className='w-full h-full rounded-full'
                     alt='selected language'
+                    data-cy={`selected-language-flag-${selectedLanObj.locale}`}
                   />
                 </div>
 
-                <span className='hidden ml-3 md:block'>{selectedLanObj.lan}</span>
+                <span data-cy='selected-language' className='hidden ml-3 md:block'>
+                  {selectedLanObj.lan}
+                </span>
 
                 <span className='md:hidden ml-3 block'>
                   {selectedLanObj.locale === 'en' ? 'Eng' : 'ქარ'}
@@ -45,6 +51,7 @@ const LanguageSelector = () => {
                 {languagesList.map((language) => (
                   <button className='w-full' key={language.lan}>
                     <Listbox.Option
+                      data-cy={`language-option-${language.locale}`}
                       onClick={() => updateLanguageState(language.locale)}
                       className={({ active }) =>
                         classNames(
