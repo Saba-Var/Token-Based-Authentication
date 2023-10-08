@@ -10,14 +10,14 @@ const AuthPageWrapper = () => {
 
   const authQuestionOptions: Record<AuthPageRoute, AuthQuestionProps> = {
     'sign-in': {
-      linkText: '',
-      questionText: '',
-      redirectUrl: '',
+      questionText: t('dont_have_an_account'),
+      redirectUrl: '/auth/sign-up',
+      linkText: t('sign_up'),
     },
     'sign-up': {
-      linkText: '',
-      questionText: '',
-      redirectUrl: '',
+      questionText: t('already_have_an_account'),
+      redirectUrl: '/auth/sign-in',
+      linkText: t('log_in'),
     },
   }
 
