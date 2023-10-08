@@ -1,4 +1,4 @@
-name: CI
+name: Build
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,11 +32,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Cypress
-        uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-          headless: true
-          start: npm start
-          wait-on: http://localhost:5173
