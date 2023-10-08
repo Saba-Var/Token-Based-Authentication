@@ -1,4 +1,4 @@
-name: Cypress tests
+name: Run Cypress Tests
 
 on:
   push:
