@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Home Page', () => {
+describe('Home page', () => {
   beforeEach(() => {
     cy.visit('/')
     cy.get("[data-cy='description']").as('description')
