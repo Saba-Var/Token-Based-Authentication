@@ -54,12 +54,10 @@ describe('Sign up page', () => {
       statusCode: 200,
     })
     cy.fillSignUpForm()
-    cy.get('@submit-sign-up')
-      .click({
-        force: true,
-      })
-      .wait(10000)
-    cy.get("[data-cy='success-modal']").should('be.visible').wait(10000)
+    cy.get('@submit-sign-up').click({
+      force: true,
+    })
+    cy.get("[data-cy='success-modal']").should('be.visible')
     cy.get("[data-cy='success-modal-link']").click()
     cy.url().should('not.include', '/auth/sign-up')
   })
