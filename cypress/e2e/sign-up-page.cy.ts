@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import { BACKEND_BASE_URI } from '../support/commands'
 
 describe('Sign up page', () => {
   beforeEach(() => {
@@ -50,10 +49,13 @@ describe('Sign up page', () => {
   })
 
   it('Should submit the form if it is valid', () => {
-    cy.intercept('POST', `${BACKEND_BASE_URI}/auth/sign-up`, {
+    cy.intercept('POST', `https://token-based-authentication-api.vercel.app/auth/sign-up`, {
       statusCode: 200,
     })
-    cy.fillSignUpForm()
+    cy.get('@username-input').type('test')
+    cy.get('@email-input').type('test@gmail.com')
+    cy.get('@password-input').type('123456')
+    cy.get('@passwordConfirmation-input').type('123456')
     cy.get('@submit-sign-up').click({
       force: true,
     })
@@ -63,11 +65,41 @@ describe('Sign up page', () => {
   })
 
   it('Should set error to username if username is already taken', () => {
-    cy.signUpDuplicateError('username')
+    cy.intercept('POST', `https://token-based-authentication-api.vercel.app/auth/sign-up`, {
+      statusCode: 409,
+      body: {
+        message: `username is taken`,
+      },
+    })
+
+    cy.get('@username-input').type('test')
+    cy.get('@email-input').type('test@gmail.com')
+    cy.get('@password-input').type('123456')
+    cy.get('@passwordConfirmation-input').type('123456')
+
+    cy.get('@submit-sign-up').click({
+      force: true,
+    })
+    cy.get(`[data-cy='username-validation']`).should('contain', `Username is already taken`)
   })
 
   it('Should set error to email if email is already taken', () => {
-    cy.signUpDuplicateError('email')
+    cy.intercept('POST', `https://token-based-authentication-api.vercel.app/auth/sign-up`, {
+      statusCode: 409,
+      body: {
+        message: `email is taken`,
+      },
+    })
+
+    cy.get('@username-input').type('test')
+    cy.get('@email-input').type('test@gmail.com')
+    cy.get('@password-input').type('123456')
+    cy.get('@passwordConfirmation-input').type('123456')
+
+    cy.get('@submit-sign-up').click({
+      force: true,
+    })
+    cy.get(`[data-cy='email-validation']`).should('contain', `Email is already taken`)
   })
 
   it('Should navigate to home page after clicking the home icon', () => {
