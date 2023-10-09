@@ -23,6 +23,7 @@ const TextInputField: React.FC<InputFieldProps> = ({
   return (
     <div className='min-h-[107px] w-full'>
       <label
+        data-cy={`${name}-label`}
         className={`block text-base select-none text-left font-medium text-gray-700 ${
           isError && 'text-red-900'
         } ${labelClasses}`}
@@ -32,6 +33,7 @@ const TextInputField: React.FC<InputFieldProps> = ({
       </label>
       <div className='mt-2 relative'>
         <input
+          data-cy={`${name}-input`}
           {...register(name)}
           className={`block w-full pr-8 appearance-none rounded-md border border-gray-300 p-3 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm ${
             isError &&
@@ -76,11 +78,13 @@ const TextInputField: React.FC<InputFieldProps> = ({
         )}
       </div>
 
-      <ErrorMessage
-        render={({ message }) => <InputErrorMessage errorMessage={message} />}
-        errors={errors}
-        name={name}
-      />
+      <div data-cy={`${name}-validation`}>
+        <ErrorMessage
+          render={({ message }) => <InputErrorMessage errorMessage={message} />}
+          errors={errors}
+          name={name}
+        />
+      </div>
     </div>
   )
 }

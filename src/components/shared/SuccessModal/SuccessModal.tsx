@@ -39,7 +39,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
           <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
         </Transition.Child>
 
-        <div className='fixed inset-0 z-10 overflow-y-auto'>
+        <div data-cy='success-modal' className='fixed inset-0 z-10 overflow-y-auto'>
           <div className='flex min-h-full justify-center p-4 text-center items-center sm:p-0'>
             <Transition.Child
               as={Fragment}
@@ -86,6 +86,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
                 >
                   {linkAction && !showOnlyCloseButton && (
                     <Link
+                      data-cy='success-modal-link'
                       to='https://gmail.com'
                       className='inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 sm:col-start-2 sm:text-sm'
                       rel='noreferrer'

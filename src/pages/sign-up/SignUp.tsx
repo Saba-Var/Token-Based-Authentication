@@ -36,6 +36,7 @@ const SignUp = () => {
             showLoadingIndicator={userRegistering}
             disabled={userRegistering || !isValid}
             className='mt-4 !text-base'
+            data-cy='submit-sign-up'
             title={t('sign-up')}
             type='submit'
           />
