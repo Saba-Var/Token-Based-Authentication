@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import { BACKEND_BASE_URI } from '../support/commands'
 
 describe('Sign up page', () => {
   beforeEach(() => {
@@ -50,7 +49,7 @@ describe('Sign up page', () => {
   })
 
   it('Should submit the form if it is valid', () => {
-    cy.intercept('POST', `${BACKEND_BASE_URI}/auth/sign-up`, {
+    cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-up`, {
       statusCode: 200,
     })
     cy.fillSignUpForm()
