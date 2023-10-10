@@ -41,7 +41,7 @@ describe('Home page', () => {
 
   it("Should redirect to log in page when clicking on 'Log in' on the navbar", () => {
     cy.get('@navbar-log-in').click()
-    cy.url().should('include', '/auth/sign-in')
+    cy.url().should('include', '/auth/log-in')
   })
 
   it('Should redirect to home page when click on the home icon', () => {

@@ -39,7 +39,7 @@ const AuthPageWrapper = () => {
             <Outlet />
           </div>
 
-          {(childRouteName === 'sign-in' || childRouteName === 'sign-up') && (
+          {(childRouteName === 'log-in' || childRouteName === 'sign-up') && (
             <AuthQuestion {...authQuestionPropsData} />
           )}
         </div>

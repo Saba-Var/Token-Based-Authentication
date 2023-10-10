@@ -10,7 +10,7 @@
   "page_not_found": "Page not found",
   "page_not_found_description": "The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
   "go_back_home": "Go back home",
-  "sign-in": "Log in",
+  "log-in": "Log in",
   "sign-up": "Sign up",
   "already_have_an_account": "Already have an account",
   "username-required": "Username is required",
@@ -31,5 +31,8 @@
   "confirmation_instructions": "We have sent a confirmation email to you. Please check your checkbox for further instructions to activate your account",
   "go_to_gmail": "Go to Gmail",
   "confirmation_sent": "Confirmation email sent",
-  "close": "Close"
+  "close": "Close",
+  "activation_success": "Congratulations! Your account has been activated. You can now log in.",
+  "account_already_activated": "Your account has already been activated. You can now log in.",
+  "activation_fail": "Your account activation failed. Please try again."
 }

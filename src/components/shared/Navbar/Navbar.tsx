@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className='hidden md:block'>
               <Link
                 data-cy='navbar-log-in'
-                to='/auth/sign-in'
+                to='/auth/log-in'
                 className='ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
               >
                 {t('log_in')}

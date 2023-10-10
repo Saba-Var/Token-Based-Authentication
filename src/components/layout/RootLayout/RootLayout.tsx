@@ -1,13 +1,15 @@
-import { Navbar } from '@/components'
+import useRootLayout from './useRootLayout'
+import { LoadingIcon } from '@/components'
 import { Outlet } from 'react-router-dom'
+import { Suspense } from 'react'
 
 const RootLayout = () => {
-  return (
-    <>
-      <Navbar />
+  useRootLayout()
 
+  return (
+    <Suspense fallback={<LoadingIcon centered />}>
       <Outlet />
-    </>
+    </Suspense>
   )
 }
 

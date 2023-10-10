@@ -5,7 +5,7 @@ export default defineConfig({
     setupNodeEvents() {},
     viewportHeight: 1080,
     viewportWidth: 1920,
-    baseUrl: 'http://localhost:5173',
+    baseUrl: 'http://localhost:3000',
   },
   env: {
     CYPRESS_BACKEND_BASE_URI: 'https://token-based-authentication-api.vercel.app',

@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query'
 import type { SignUpFormValues } from '@/types'
 import { useTranslation } from 'react-i18next'
 import { signUpSchema } from '@/validation'
-import { registerUSer } from '@/services'
+import { registerUserRequest } from '@/services'
 import { useState } from 'react'
 
 const useSignUp = () => {
@@ -30,7 +30,8 @@ const useSignUp = () => {
     setError,
   } = form
 
-  const { mutate: registerUserMutation, isLoading: userRegistering } = useMutation(registerUSer)
+  const { mutate: registerUserRequestMutation, isLoading: userRegistering } =
+    useMutation(registerUserRequest)
 
   const setFieldErrors = (error: any) => {
     const message = error?.response?.data?.message
@@ -51,7 +52,7 @@ const useSignUp = () => {
   }
 
   const submitHandler: SubmitHandler<SignUpFormValues> = (values) => {
-    registerUserMutation(values, {
+    registerUserRequestMutation(values, {
       onSuccess: () => {
         resetForm()
         setShowSuccessModal(true)
