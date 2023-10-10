@@ -18,7 +18,7 @@ describe('Account activation page', () => {
       'contain',
       'Congratulations! Your account has been activated. You can now log in.',
     )
-    cy.activationLinkAction('Log in', '/auth/log-in')
+    cy.activationLinkAction('Log in', '/auth/sign-in')
   })
 
   it('Should see team discussing image if the account is already activated', () => {
@@ -31,7 +31,7 @@ describe('Account activation page', () => {
       'contain',
       'Your account has already been activated. You can now log in.',
     )
-    cy.activationLinkAction('Log in', '/auth/log-in')
+    cy.activationLinkAction('Log in', '/auth/sign-in')
   })
 
   it('Should see stressed man image if the account activation failed with different status code than 409', () => {
@@ -58,6 +58,6 @@ describe('Account activation page', () => {
       'contain',
       'გილოცავ! შენი ანგარიში წარმატებით გააქტიურდა. ახლა შეგიძლია შეხვიდე აპლიკაციაში.',
     )
-    cy.activationLinkAction('შესვლა', '/auth/log-in')
+    cy.activationLinkAction('შესვლა', '/auth/sign-in')
   })
 })
