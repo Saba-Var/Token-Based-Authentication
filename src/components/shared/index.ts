@@ -1,3 +1,4 @@
+export * from './CheckboxInputField'
 export * from './InputErrorMessage'
 export * from './LanguageSelector'
 export * from './TextInputField'
