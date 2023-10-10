@@ -3,6 +3,7 @@ import { useMutation } from '@tanstack/react-query'
 import type { LogInFormValues } from '@/types'
 import { useTranslation } from 'react-i18next'
 import { logInRequest } from '@/services'
+import Cookies from 'js-cookie'
 
 const useLogin = () => {
   const { mutate: submitForm, isLoading: authorizing } = useMutation(logInRequest)
@@ -22,9 +23,10 @@ const useLogin = () => {
 
   const submitHandler: SubmitHandler<LogInFormValues> = (formValues) => {
     submitForm(formValues, {
-      onSuccess: (_response, variables: LogInFormValues) => {
-        const { rememberMe } = variables
-        console.log(rememberMe)
+      onSuccess: (_response, { rememberMe }: LogInFormValues) => {
+        if (rememberMe) {
+          Cookies.set('rememberMe', String(rememberMe), { expires: 7 })
+        }
       },
 
       onError: (error: any) => {

@@ -16,18 +16,16 @@ const LogIn = () => {
 
         <div className='flex mb-4 mt-4 items-center justify-between'>
           <CheckboxInputField text={t('remember_me')} name='rememberMe' />
-          <div className='text-sm lg:text-base'>
-            <Link
-              className='font-medium cursor-pointer text-blue-600 hover:underline hover:text-blue-700'
-              to='/auth/password-reset-request'
-            >
-              {t('forget_password')} ?
-            </Link>
-          </div>
+          <Link
+            className='font-medium text-sm lg:text-base cursor-pointer text-blue-600 hover:underline hover:text-blue-700'
+            to='/auth/password-reset-request'
+          >
+            {t('forget_password')} ?
+          </Link>
         </div>
 
         <Button
-          className='mt-4 !text-base'
+          className='mt-6 !text-base'
           disabled={authorizing}
           showLoadingIndicator
           title={t('log_in')}
