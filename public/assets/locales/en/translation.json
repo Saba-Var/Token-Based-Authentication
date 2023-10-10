@@ -31,5 +31,8 @@
   "confirmation_instructions": "We have sent a confirmation email to you. Please check your checkbox for further instructions to activate your account",
   "go_to_gmail": "Go to Gmail",
   "confirmation_sent": "Confirmation email sent",
-  "close": "Close"
+  "close": "Close",
+  "activation-success": "Congratulations! Your account has been activated. You can now log in.",
+  "account_already_activated": "Your account has already been activated. You can now log in.",
+  "activation_fail": "Your account activation failed. Please try again."
 }
