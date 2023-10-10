@@ -41,14 +41,14 @@ const useActivationRequest = () => {
     return {
       200: {
         text: t('activation_success'),
-        redirect: '/auth/log-in',
+        redirect: '/auth/sign-in',
         imgAlt: 'celebration',
         image: celebration,
       },
       409: {
         text: t('account_already_activated'),
         imgAlt: 'team discussing',
-        redirect: '/auth/log-in',
+        redirect: '/auth/sign-in',
         image: teamDiscussing,
       },
       fail: {
