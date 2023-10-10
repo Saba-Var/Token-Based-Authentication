@@ -8,15 +8,19 @@ import { router } from '@/router'
 import React from 'react'
 import './index.css'
 import '../i18n'
+import { store } from '@/store'
+import { Provider } from 'react-redux'
 
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <RouterProvider router={router} />
-      <ToastContainer />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </QueryClientProvider>
+    </Provider>
   </React.StrictMode>,
 )

@@ -1,5 +1,5 @@
+import { Home, NotFound, SignUp, AccountActivation, LogIn } from '@/pages'
 import { NavbarLayout, AuthPageLayout, RootLayout } from '@/components'
-import { Home, NotFound, SignUp, AccountActivation } from '@/pages'
 import { createBrowserRouter } from 'react-router-dom'
 import SuspenseItself from './SuspenseItself'
 
@@ -34,7 +34,11 @@ const router = createBrowserRouter([
               },
               {
                 path: 'log-in',
-                element: <div>Log in</div>,
+                element: (
+                  <SuspenseItself>
+                    <LogIn />
+                  </SuspenseItself>
+                ),
               },
             ],
           },

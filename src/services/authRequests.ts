@@ -1,4 +1,4 @@
-import type { ResponseMessage, SignUpFormValues } from '@/types'
+import type { ResponseMessage, SignUpFormValues, LogInFormValues, AuthTokens } from '@/types'
 import { publicAxiosInstance as publicAxios } from '@/services'
 import type { AxiosResponse } from 'axios'
 
@@ -12,4 +12,8 @@ export const accountActivationRequest = (
   token: string,
 ): Promise<AxiosResponse<ResponseMessage>> => {
   return publicAxios.post(`/auth/account-activation?token=${token}`)
+}
+
+export const logInRequest = (data: LogInFormValues): Promise<AxiosResponse<AuthTokens>> => {
+  return publicAxios.post('/auth/sign-in', data)
 }
