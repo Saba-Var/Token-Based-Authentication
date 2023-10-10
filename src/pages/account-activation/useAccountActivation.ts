@@ -9,6 +9,7 @@ const useActivationRequest = () => {
   const [activationStatusCode, setActivationStatusCode] = useState<null | number>(null)
 
   const [searchParams] = useSearchParams()
+
   const location = useLocation()
   const navigate = useNavigate()
   const { t } = useTranslation()
@@ -30,26 +31,29 @@ const useActivationRequest = () => {
   })
 
   useEffect(() => {
-    const tokenParam = searchParams.get('token')
-    if (tokenParam) {
-      activateAccountMutation(tokenParam)
+    const tokenQueryParam = searchParams.get('token')
+    if (tokenQueryParam) {
+      activateAccountMutation(tokenQueryParam)
     }
   }, [activateAccountMutation, searchParams])
 
   const activationResultsStatusData = useMemo(() => {
     return {
       200: {
-        text: t('activation-success'),
+        text: t('activation_success'),
         redirect: '/auth/log-in',
+        imgAlt: 'celebration',
         image: celebration,
       },
       409: {
         text: t('account_already_activated'),
+        imgAlt: 'team discussing',
         redirect: '/auth/log-in',
         image: teamDiscussing,
       },
       fail: {
         text: t('activation_fail'),
+        imgAlt: 'stressed man',
         image: stressedMan,
         redirect: '/',
       },

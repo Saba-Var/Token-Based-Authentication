@@ -9,14 +9,14 @@ const AuthPageWrapper = () => {
   const { t } = useTranslation()
 
   const authQuestionOptions: Record<AuthPageRoute, AuthQuestionProps> = {
-    'sign-in': {
+    'log-in': {
       questionText: t('dont_have_an_account'),
       redirectUrl: '/auth/sign-up',
       linkText: t('sign_up'),
     },
     'sign-up': {
       questionText: t('already_have_an_account'),
-      redirectUrl: '/auth/sign-in',
+      redirectUrl: '/auth/log-in',
       linkText: t('log_in'),
     },
   }

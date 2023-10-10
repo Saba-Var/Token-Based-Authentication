@@ -77,6 +77,6 @@ describe('Sign up page', () => {
   it('Should have auth question based on the sign up page and redirect to sign in page', () => {
     cy.get("[data-cy='auth-question']").should('contain', 'Already have an account? Log in')
     cy.get("[data-cy='auth-question-link']").click()
-    cy.url().should('include', '/auth/sign-in')
+    cy.url().should('include', '/auth/log-in')
   })
 })

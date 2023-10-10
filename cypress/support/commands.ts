@@ -23,3 +23,27 @@ Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
     `${fieldName[0].toUpperCase() + fieldName.slice(1)} is already taken`,
   )
 })
+
+Cypress.Commands.add('accountActivationRequest', ({ statusCode, token = '' }) => {
+  cy.intercept(
+    'POST',
+    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/account-activation${
+      token && `?token=${token}`
+    }`,
+    {
+      statusCode,
+    },
+  )
+  cy.visit({
+    url: '/auth/account-activation',
+    qs: {
+      token,
+    },
+  })
+})
+
+Cypress.Commands.add('activationLinkAction', (text, redirectUri) => {
+  cy.get('[data-cy="activation-action-link"]').as('activationLink').should('contain', text)
+  cy.get('@activationLink').click()
+  cy.url().should('contain', redirectUri)
+})

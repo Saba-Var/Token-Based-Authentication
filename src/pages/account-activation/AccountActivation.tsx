@@ -7,23 +7,32 @@ const AccountActivation = () => {
 
   return (
     <div className='h-screen bg-white w-full flex justify-center'>
-      {!isLoading && activationResultToShow?.image ? (
+      {!isLoading ? (
         <div className='flex items-center justify-center flex-col gap-5'>
           <div>
             <img
-              className='h-[50vh] w-full'
+              data-cy={activationResultToShow.imgAlt}
+              alt={activationResultToShow.imgAlt}
               src={activationResultToShow.image}
-              alt='activation result'
+              className='h-[50vh] w-full'
             />
           </div>
-          <h2 className='text-xl sm:text-3xl px-2 text-center'>{activationResultToShow.text}</h2>
 
-          <Link replace to={activationResultToShow.redirect} className='primary-btn'>
+          <h2 data-cy='text-result' className='text-xl sm:text-3xl px-2 text-center'>
+            {activationResultToShow.text}
+          </h2>
+
+          <Link
+            to={activationResultToShow.redirect}
+            data-cy='activation-action-link'
+            className='primary-btn'
+            replace
+          >
             {activationResultToShow.redirect === '/' ? t('go_back_home') : t('log_in')}
           </Link>
         </div>
       ) : (
-        <LoadingIcon centered />
+        <LoadingIcon data-cy='loading-icon' centered />
       )}
     </div>
   )
