@@ -9,7 +9,7 @@ publicAxiosInstance.interceptors.response.use(
 
   async (error) => {
     if (error?.response?.status === 500) {
-      emitToast(error?.response?.data?.message, 'error')
+      emitToast(error?.response?.data?.message || 'Something went wrong', 'error')
     }
     return Promise.reject(error)
   },
