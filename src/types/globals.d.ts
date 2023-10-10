@@ -16,9 +16,21 @@ export type ResponseMessage = {
   message: string
 }
 
-export type SignUpFormValues = {
-  passwordConfirmation: string
-  password: string
-  username: string
+export type BaseAuthFormValues = {
   email: string
+  password: string
+}
+
+export interface LogInFormValues extends BaseAuthFormValues {
+  rememberMe: boolean
+}
+
+export interface SignUpFormValues extends BaseAuthFormValues {
+  passwordConfirmation: string
+  username: string
+}
+
+export type AuthTokens = {
+  accessToken: string
+  refreshToken: string
 }

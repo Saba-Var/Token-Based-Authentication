@@ -34,5 +34,9 @@
   "close": "Close",
   "activation_success": "Congratulations! Your account has been activated. You can now log in.",
   "account_already_activated": "Your account has already been activated. You can now log in.",
-  "activation_fail": "Your account activation failed. Please try again."
+  "activation_fail": "Your account activation failed. Please try again.",
+  "remember_me": "Remember me",
+  "forget_password": "Forget password",
+  "incorrect_credentials": "Password or email is incorrect",
+  "inactive_account": "Account is not active"
 }
