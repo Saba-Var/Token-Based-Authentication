@@ -35,11 +35,11 @@ const TextInputField: React.FC<InputFieldProps> = ({
         <input
           data-cy={`${name}-input`}
           {...register(name)}
-          className={`block w-full pr-8 appearance-none rounded-md border border-gray-300 p-3 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm ${
+          className={`block w-full pr-10 appearance-none rounded-md border border-gray-300 p-3 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm ${
             isError &&
             'border-red-300 text-red-900 placeholder-red-300 focus:border-red-500 focus:ring-red-500'
           } ${isValid && '!border-green'} ${
-            isPasswordField && (isError || isValid) && 'pr-14'
+            isPasswordField && (isError || isValid) && 'pr-[55px]'
           } disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500 disabled:ring-gray-200 lg:text-base`}
           placeholder={placeholder || label || t(name)}
           autoComplete={autoComplete}

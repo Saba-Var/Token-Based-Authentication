@@ -1,16 +1,19 @@
 import { useForm, type SubmitHandler } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
 import type { LogInFormValues } from '@/types'
 import { useTranslation } from 'react-i18next'
+import { logInSchema } from '@/validation'
 import { logInRequest } from '@/services'
 import Cookies from 'js-cookie'
 
 const useLogin = () => {
-  const { mutate: submitForm, isLoading: authorizing } = useMutation(logInRequest)
-
   const { t } = useTranslation()
 
+  const { mutate: logInMutation, isLoading: authorizing } = useMutation(logInRequest)
+
   const form = useForm({
+    resolver: yupResolver(logInSchema),
     defaultValues: {
       rememberMe: false,
       password: '',
@@ -19,10 +22,14 @@ const useLogin = () => {
     mode: 'onTouched',
   })
 
-  const { handleSubmit, setError } = form
+  const {
+    formState: { isValid },
+    handleSubmit,
+    setError,
+  } = form
 
   const submitHandler: SubmitHandler<LogInFormValues> = (formValues) => {
-    submitForm(formValues, {
+    logInMutation(formValues, {
       onSuccess: (_response, { rememberMe }: LogInFormValues) => {
         if (rememberMe) {
           Cookies.set('rememberMe', String(rememberMe), { expires: 7 })
@@ -54,6 +61,7 @@ const useLogin = () => {
     submitHandler,
     handleSubmit,
     authorizing,
+    isValid,
     form,
     t,
   }

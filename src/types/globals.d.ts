@@ -22,7 +22,7 @@ export type BaseAuthFormValues = {
 }
 
 export interface LogInFormValues extends BaseAuthFormValues {
-  rememberMe: boolean
+  rememberMe?: boolean
 }
 
 export interface SignUpFormValues extends BaseAuthFormValues {

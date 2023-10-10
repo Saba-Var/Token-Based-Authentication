@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import useLogin from './useLogIn'
 
 const LogIn = () => {
-  const { authorizing, form, handleSubmit, submitHandler, t } = useLogin()
+  const { authorizing, form, handleSubmit, submitHandler, t, isValid } = useLogin()
 
   return (
     <FormProvider {...form}>
@@ -25,9 +25,9 @@ const LogIn = () => {
         </div>
 
         <Button
+          disabled={authorizing || !isValid}
+          showLoadingIndicator={authorizing}
           className='mt-6 !text-base'
-          disabled={authorizing}
-          showLoadingIndicator
           title={t('log_in')}
           type='submit'
           fullWidth
