@@ -5,7 +5,6 @@ const NavbarLayout = () => {
   return (
     <>
       <Navbar />
-
       <Outlet />
     </>
   )

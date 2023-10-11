@@ -12,4 +12,4 @@ export const languages = {
     lan: 'English',
     locale: 'en',
   },
-} as const
+}

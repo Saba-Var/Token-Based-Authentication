@@ -7,7 +7,29 @@ Cypress.Commands.add('fillSignUpForm', () => {
   cy.get('@passwordConfirmation-input').type('123456')
 })
 
-Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
+Cypress.Commands.add('logInRequest', (statusCode) => {
+  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-in`, {
+    statusCode,
+  })
+})
+
+Cypress.Commands.add('activationLinkAction', (text, redirectUri) => {
+  cy.get('[data-cy="activation-action-link"]').as('activationLink').should('contain', text)
+  cy.get('@activationLink').click()
+  cy.url().should('contain', redirectUri)
+})
+
+Cypress.Commands.add('changeLanguage', (languageLocale: 'en' | 'ka') => {
+  cy.get('[data-cy="language-selector"]').click()
+  cy.get(`[data-cy="language-option-${languageLocale}"]`).click()
+})
+
+Cypress.Commands.add('homeIconNavigation', () => {
+  cy.get("[data-cy='home-icon']").click()
+  cy.url().should('include', '/')
+})
+
+Cypress.Commands.add('signUpDuplicateError', (fieldName) => {
   cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-up`, {
     statusCode: 409,
     body: {
@@ -24,7 +46,7 @@ Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
   )
 })
 
-Cypress.Commands.add('accountActivationRequest', (statusCode: number) => {
+Cypress.Commands.add('accountActivationRequest', (statusCode) => {
   const token = 'test'
   cy.intercept(
     'POST',
@@ -41,19 +63,22 @@ Cypress.Commands.add('accountActivationRequest', (statusCode: number) => {
   })
 })
 
-Cypress.Commands.add('logInRequest', (statusCode: number) => {
-  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-in`, {
-    statusCode,
+Cypress.Commands.add('resetPasswordEmailRequest', ({ email, statusCode }) => {
+  cy.intercept(
+    'GET',
+    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/change-password-email?email=${email}`,
+    {
+      statusCode,
+    },
+  )
+})
+
+Cypress.Commands.add('requestPasswordResetWithError', (statusCode) => {
+  const email = 'test@gmail.com'
+  cy.resetPasswordEmailRequest({ statusCode, email })
+  cy.get('@email-input').type(email)
+  cy.get('@reset-password-request-button').click({
+    force: true,
   })
-})
-
-Cypress.Commands.add('activationLinkAction', (text, redirectUri) => {
-  cy.get('[data-cy="activation-action-link"]').as('activationLink').should('contain', text)
-  cy.get('@activationLink').click()
-  cy.url().should('contain', redirectUri)
-})
-
-Cypress.Commands.add('changeLanguage', (languageLocale: 'en' | 'ka') => {
-  cy.get('[data-cy="language-selector"]').click()
-  cy.get(`[data-cy="language-option-${languageLocale}"]`).click()
+  cy.get("[data-cy='success-modal']").should('not.exist')
 })

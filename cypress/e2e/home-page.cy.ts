@@ -46,8 +46,7 @@ describe('Home page', () => {
 
   it('Should redirect to home page when click on the home icon', () => {
     cy.get('@navbar-log-in').click()
-    cy.get("[data-cy='home-icon']").click()
-    cy.url().should('include', '/')
+    cy.homeIconNavigation()
     cy.get('@title').should('contain', 'Token-based Authentication')
   })
 

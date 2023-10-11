@@ -19,6 +19,11 @@ const AuthPageWrapper = () => {
       redirectUrl: '/auth/log-in',
       linkText: t('log_in'),
     },
+    'request-password-reset': {
+      questionText: t('dont_have_an_account'),
+      redirectUrl: '/auth/sign-up',
+      linkText: t('sign_up'),
+    },
   }
 
   const childRouteName = useMemo(() => {

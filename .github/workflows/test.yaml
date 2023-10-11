@@ -11,12 +11,15 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Create .env file
         run: |
           echo "VITE_BACKEND_API_BASE_URI=${{ secrets.VITE_BACKEND_API_BASE_URI }}" > .env
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
