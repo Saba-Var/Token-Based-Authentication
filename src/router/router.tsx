@@ -1,4 +1,4 @@
-import { Home, NotFound, SignUp, AccountActivation, LogIn } from '@/pages'
+import { Home, NotFound, SignUp, AccountActivation, LogIn, RequestPasswordReset } from '@/pages'
 import { NavbarLayout, AuthPageLayout, RootLayout } from '@/components'
 import { createBrowserRouter } from 'react-router-dom'
 import SuspenseItself from './SuspenseItself'
@@ -22,23 +22,23 @@ const router = createBrowserRouter([
         path: '/auth',
         children: [
           {
-            element: <AuthPageLayout />,
+            element: (
+              <SuspenseItself>
+                <AuthPageLayout />
+              </SuspenseItself>
+            ),
             children: [
               {
                 path: 'sign-up',
-                element: (
-                  <SuspenseItself>
-                    <SignUp />
-                  </SuspenseItself>
-                ),
+                element: <SignUp />,
               },
               {
                 path: 'log-in',
-                element: (
-                  <SuspenseItself>
-                    <LogIn />
-                  </SuspenseItself>
-                ),
+                element: <LogIn />,
+              },
+              {
+                path: 'request-password-reset',
+                element: <RequestPasswordReset />,
               },
             ],
           },

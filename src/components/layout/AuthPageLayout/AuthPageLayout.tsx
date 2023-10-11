@@ -28,7 +28,7 @@ const AuthPageWrapper = () => {
             }`}
             data-cy='auth-page-title'
           >
-            {t(childRouteName)}
+            {t(childRouteName === 'request-password-reset' ? 'reset_password' : childRouteName)}
           </h2>
         </div>
 
@@ -37,12 +37,15 @@ const AuthPageWrapper = () => {
             <div className='flex justify-end mb-8'>
               <LanguageSelector />
             </div>
+
+            {childRouteName === 'request-password-reset' && (
+              <p className='mb-8 text-center'>{t('password_reset_instruction')}</p>
+            )}
+
             <Outlet />
           </div>
 
-          {(childRouteName === 'log-in' || childRouteName === 'sign-up') && (
-            <AuthQuestion {...authQuestionPropsData} />
-          )}
+          <AuthQuestion {...authQuestionPropsData} />
         </div>
       </div>
     </>

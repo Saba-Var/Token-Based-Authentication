@@ -53,7 +53,7 @@ describe('Log in page', () => {
 
   it('Should navigate to password reset request page after clicking the forget password link', () => {
     cy.get('@forget-password-link').click()
-    cy.url().should('include', '/auth/password-reset-request')
+    cy.url().should('include', '/auth/request-password-reset')
   })
 
   it('Should change language after select different language from the language selector', () => {

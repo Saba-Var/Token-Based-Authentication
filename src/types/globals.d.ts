@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react'
 
 export type SetState<T> = Dispatch<SetStateAction<T>>
 
-export type AuthPageRoute = 'sign-up' | 'log-in'
+export type AuthPageRoute = 'sign-up' | 'log-in' | 'request-password-reset'
 
 export type Languages = 'en' | 'ka'
 

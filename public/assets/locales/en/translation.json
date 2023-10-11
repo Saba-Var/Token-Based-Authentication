@@ -38,5 +38,13 @@
   "remember_me": "Remember me",
   "forget_password": "Forget password",
   "incorrect_credentials": "Password or email is incorrect",
-  "inactive_account": "Account is not active"
+  "inactive_account": "Account is not active",
+  "password_reset_instruction": "Enter the your email address and we will send you a link to change your password",
+  "reset_link_sent": "Reset link sent",
+  "check_email": "We have sent you an email with a link to change your password. Check your inbox and click on the link to reset password.",
+  "new_password_instruction": "Enter your new password",
+  "password_reset_fail": "Reset password failed",
+  "password_reset_fail_description": "Unfortunately password reset failed. Please check url or request password reset link again.",
+  "password_reset_success": "Password changed successfully",
+  "reset_password": "Reset password"
 }

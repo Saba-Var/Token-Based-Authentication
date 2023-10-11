@@ -1,3 +1,4 @@
+export * from './request-password-reset'
 export * from './account-activation'
 export * from './sign-up'
 export * from './log-in'
