@@ -37,8 +37,7 @@ describe('Sign up page', () => {
       'contain',
       'Confirm password is required',
     )
-    cy.get('[data-cy="language-selector"]').click()
-    cy.get('[data-cy="language-option-ka"]').click()
+    cy.changeLanguage('ka')
     cy.get("[data-cy='username-validation']").should('contain', 'სახელი სავალდებულოა')
     cy.get("[data-cy='email-validation']").should('contain', 'ელ-ფოსტა სავალდებულოა')
     cy.get("[data-cy='password-validation']").should('contain', 'პაროლი სავალდებულოა')

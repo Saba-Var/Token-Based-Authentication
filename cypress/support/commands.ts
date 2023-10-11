@@ -24,12 +24,11 @@ Cypress.Commands.add('signUpDuplicateError', (fieldName: string) => {
   )
 })
 
-Cypress.Commands.add('accountActivationRequest', ({ statusCode, token = '' }) => {
+Cypress.Commands.add('accountActivationRequest', (statusCode: number) => {
+  const token = 'test'
   cy.intercept(
     'POST',
-    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/account-activation${
-      token && `?token=${token}`
-    }`,
+    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/account-activation?token=${token}`,
     {
       statusCode,
     },
@@ -42,8 +41,19 @@ Cypress.Commands.add('accountActivationRequest', ({ statusCode, token = '' }) =>
   })
 })
 
+Cypress.Commands.add('logInRequest', (statusCode: number) => {
+  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-in`, {
+    statusCode,
+  })
+})
+
 Cypress.Commands.add('activationLinkAction', (text, redirectUri) => {
   cy.get('[data-cy="activation-action-link"]').as('activationLink').should('contain', text)
   cy.get('@activationLink').click()
   cy.url().should('contain', redirectUri)
+})
+
+Cypress.Commands.add('changeLanguage', (languageLocale: 'en' | 'ka') => {
+  cy.get('[data-cy="language-selector"]').click()
+  cy.get(`[data-cy="language-option-${languageLocale}"]`).click()
 })
