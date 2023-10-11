@@ -11,6 +11,7 @@ const CheckboxInputField: React.FC<CheckboxInputFieldProps> = ({
 
   return (
     <label
+      data-cy={`checkbox-${name}`}
       className={`text-sm lg:text-base text-gray-900 flex gap-2 items-center cursor-pointer ${
         disabled && '!cursor-not-allowed'
       }`}

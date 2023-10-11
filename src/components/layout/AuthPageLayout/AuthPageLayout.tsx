@@ -26,6 +26,7 @@ const AuthPageWrapper = () => {
             className={`text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-800 ${
               childRouteName === 'sign-up' && 'mt-12 sm:mt-0'
             }`}
+            data-cy='auth-page-title'
           >
             {t(childRouteName)}
           </h2>
