@@ -19,9 +19,9 @@ const RequestPasswordReset = () => {
       <SuccessModal
         description={t('password_success_instruction')}
         title={t('password_change_link_sent')}
+        redirectUri='https://mail.google.com'
         linkActionText={t('go_to_gmail')}
         setSuccess={setShowSuccessModal}
-        redirectUri='/auth/log-in'
         show={showSuccessModal}
         linkAction={true}
       />
