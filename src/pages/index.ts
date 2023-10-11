@@ -1,5 +1,6 @@
 export * from './request-password-reset'
 export * from './account-activation'
+export * from './new-password'
 export * from './sign-up'
 export * from './log-in'
 export * from './home'

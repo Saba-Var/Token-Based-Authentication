@@ -10,6 +10,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
   closeWithOverlay,
   linkActionText,
   clickHandler,
+  redirectUri,
   description,
   linkAction,
   actionText,
@@ -90,10 +91,10 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
                     showOnlyCloseButton && 'sm:!grid-cols-1'
                   }`}
                 >
-                  {linkAction && !showOnlyCloseButton && (
+                  {linkAction && !showOnlyCloseButton && redirectUri && (
                     <Link
                       data-cy='success-modal-link'
-                      to='https://gmail.com'
+                      to={redirectUri}
                       className='inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 sm:col-start-2 sm:text-sm'
                       rel='noreferrer'
                     >

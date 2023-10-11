@@ -1,5 +1,6 @@
-import type { AuthPageRoute, AuthQuestionProps } from '@/types'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { AuthRoutesWithoutNewPassword } from './types'
+import type { AuthQuestionProps } from '@/types'
 import { useTranslation } from 'react-i18next'
 import { useMemo } from 'react'
 
@@ -8,7 +9,7 @@ const AuthPageWrapper = () => {
   const location = useLocation()
   const { t } = useTranslation()
 
-  const authQuestionOptions: Record<AuthPageRoute, AuthQuestionProps> = {
+  const authQuestionOptions: Record<AuthRoutesWithoutNewPassword, AuthQuestionProps> = {
     'log-in': {
       questionText: t('dont_have_an_account'),
       redirectUrl: '/auth/sign-up',
@@ -27,7 +28,7 @@ const AuthPageWrapper = () => {
   }
 
   const childRouteName = useMemo(() => {
-    return location.pathname.split('/')[2] as AuthPageRoute
+    return location.pathname.split('/')[2] as AuthRoutesWithoutNewPassword
   }, [location.pathname])
 
   const navigateToHome = () => navigate('/')

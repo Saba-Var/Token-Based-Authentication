@@ -1,7 +1,15 @@
-import { Home, NotFound, SignUp, AccountActivation, LogIn, RequestPasswordReset } from '@/pages'
 import { NavbarLayout, AuthPageLayout, RootLayout } from '@/components'
 import { createBrowserRouter } from 'react-router-dom'
 import SuspenseItself from './SuspenseItself'
+import {
+  RequestPasswordReset,
+  AccountActivation,
+  NewPassword,
+  NotFound,
+  SignUp,
+  LogIn,
+  Home,
+} from '@/pages'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +47,10 @@ const router = createBrowserRouter([
               {
                 path: 'request-password-reset',
                 element: <RequestPasswordReset />,
+              },
+              {
+                path: 'new-password',
+                element: <NewPassword />,
               },
             ],
           },
