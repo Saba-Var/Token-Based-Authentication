@@ -71,11 +71,17 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
                     <CheckIcon className='h-6 w-6 text-emerald-600' aria-hidden='true' />
                   </div>
                   <div className='mt-3 text-center sm:mt-5'>
-                    <Dialog.Title as='h3' className='text-lg font-medium leading-6 text-gray-900'>
+                    <Dialog.Title
+                      className='text-lg font-medium leading-6 text-gray-900'
+                      data-cy='success-modal-title'
+                      as='h3'
+                    >
                       {title}
                     </Dialog.Title>
                     <div className='mt-2'>
-                      <p className='text-sm text-gray-500'>{description}</p>
+                      <p data-cy='success-modal-description' className='text-sm text-gray-500'>
+                        {description}
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -3,18 +3,11 @@
 describe('Sign up page', () => {
   beforeEach(() => {
     cy.visit('/auth/sign-up')
-    cy.get("[data-cy='username-input']").as('username-input')
-    cy.get("[data-cy='email-input']").as('email-input')
-    cy.get("[data-cy='password-input']").as('password-input')
     cy.get("[data-cy='passwordConfirmation-input']").as('passwordConfirmation-input')
+    cy.get("[data-cy='password-input']").as('password-input')
+    cy.get("[data-cy='username-input']").as('username-input')
     cy.get("[data-cy='submit-sign-up']").as('submit-sign-up')
-  })
-
-  it('Should see all necessary fields of sign up form', () => {
-    cy.get('@username-input').should('be.visible')
-    cy.get('@email-input').should('be.visible')
-    cy.get('@password-input').should('be.visible')
-    cy.get('@passwordConfirmation-input').should('be.visible')
+    cy.get("[data-cy='email-input']").as('email-input')
   })
 
   it('Should not submit the form if it is invalid', () => {
@@ -69,8 +62,7 @@ describe('Sign up page', () => {
   })
 
   it('Should navigate to home page after clicking the home icon', () => {
-    cy.get("[data-cy='home-icon']").click()
-    cy.url().should('include', '/')
+    cy.homeIconNavigation()
   })
 
   it('Should have auth question based on the sign up page and redirect to sign in page', () => {

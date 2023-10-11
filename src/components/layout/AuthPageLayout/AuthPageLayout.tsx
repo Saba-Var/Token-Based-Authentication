@@ -39,7 +39,9 @@ const AuthPageWrapper = () => {
             </div>
 
             {childRouteName === 'request-password-reset' && (
-              <p className='mb-8 text-center'>{t('password_reset_instruction')}</p>
+              <p data-cy='auth-form-description' className='mb-8 text-center'>
+                {t('password_reset_instruction')}
+              </p>
             )}
 
             <Outlet />

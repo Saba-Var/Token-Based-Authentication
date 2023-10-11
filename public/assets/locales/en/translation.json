@@ -47,7 +47,7 @@
   "password_reset_fail_description": "Unfortunately password reset failed. Please check url or request password reset link again.",
   "password_reset_success": "Password changed successfully",
   "reset_password": "Reset password",
-  "password_change_link_sent": "Password change link sent",
+  "password_change_link_sent": "Password reset link sent",
   "send": "Send",
   "account_is_not_activated": "Account is not activated",
   "user_with_this_email_not_found": "User with this email not found"
