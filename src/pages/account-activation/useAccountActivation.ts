@@ -1,8 +1,8 @@
-import { useSearchParams, useLocation, useNavigate } from 'react-router-dom'
 import { teamDiscussing, celebration, stressedMan } from '@/assets'
 import { accountActivationRequest } from '@/services'
 import { useEffect, useMemo, useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
+import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const useActivationRequest = () => {
@@ -10,13 +10,10 @@ const useActivationRequest = () => {
 
   const [searchParams] = useSearchParams()
 
-  const location = useLocation()
-  const navigate = useNavigate()
   const { t } = useTranslation()
 
   const { mutate: activateAccountMutation, isLoading } = useMutation(accountActivationRequest, {
     onSuccess: (data) => {
-      navigate(location.pathname, { replace: true })
       setActivationStatusCode(data.status)
     },
 
