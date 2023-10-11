@@ -10,7 +10,7 @@ describe('New password page', () => {
   })
 
   it('Should see validation messages when focus and blur inputs. Also validation messages should translate into Georgian', () => {
-    cy.get('@new-password-input').focus().blur()
+    cy.get('@new-password-input').focus().blur().wait(300)
     cy.get("[data-cy='password-validation']").should('contain', 'Password is required')
     cy.get('@password-confirmation-input').focus().blur()
     cy.get("[data-cy='passwordConfirmation-validation']").should(
