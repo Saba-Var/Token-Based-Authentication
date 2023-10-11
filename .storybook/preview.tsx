@@ -18,7 +18,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <Suspense fallback={<div>loading translations...</div>}>
+      <Suspense fallback={<div>loading...</div>}>
         <MemoryRouter>
           <I18nextProvider i18n={i18n}>
             <Story />

@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {title && <p>{title}</p>}
 
-      {children}
+      {children && children}
 
       {showLoadingIndicator && (
         <span className='w-5 h-5'>

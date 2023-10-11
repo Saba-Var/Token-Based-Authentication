@@ -5,7 +5,7 @@ import i18next from 'i18next'
 
 export const useLanguageSelector = () => {
   const [selectedLanObj, setSelectedLanObj] = useState(
-    languages[(localStorage.getItem('language') as keyof typeof languages) || 'en'],
+    languages[localStorage.getItem('language') as keyof typeof languages],
   )
 
   const updateLanguageState = (lan: Languages) => {
