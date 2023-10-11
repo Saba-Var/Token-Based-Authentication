@@ -34,6 +34,7 @@ const NewPassword = () => {
           <Button
             disabled={isPasswordChanging || !isFormValid}
             showLoadingIndicator={isPasswordChanging}
+            data-cy='reset-password-button'
             title={t('reset_password')}
             className='mt-4 !text-base'
             type='submit'

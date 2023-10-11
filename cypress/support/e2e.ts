@@ -14,6 +14,8 @@ declare global {
 
       signUpDuplicateError(fieldName: string): Chainable<JQuery<HTMLElement>>
 
+      newPasswordRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
+
       logInRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
 
       homeIconNavigation(): Chainable<JQuery<HTMLElement>>
