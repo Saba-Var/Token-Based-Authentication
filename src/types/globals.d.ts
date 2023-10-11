@@ -1,8 +1,11 @@
 import type { Dispatch, SetStateAction } from 'react'
+import type { AxiosResponse } from 'axios'
 
 export type SetState<T> = Dispatch<SetStateAction<T>>
 
-export type AuthPageRoute = 'sign-up' | 'log-in' | 'request-password-reset'
+export type MessagePromiseResponse = Promise<AxiosResponse<ResponseMessage>>
+
+export type AuthPageRoute = 'sign-up' | 'log-in' | 'request-password-reset' | 'new-password'
 
 export type Languages = 'en' | 'ka'
 
@@ -33,6 +36,11 @@ export interface SignUpFormValues extends BaseAuthFormValues {
 export type AuthTokens = {
   accessToken: string
   refreshToken: string
+}
+
+export type NewPasswordFormValues = {
+  password: string
+  passwordConfirmation: string
 }
 
 export type User = {

@@ -47,7 +47,7 @@ const AuthPageWrapper = () => {
             <Outlet />
           </div>
 
-          <AuthQuestion {...authQuestionPropsData} />
+          {authQuestionPropsData?.questionText && <AuthQuestion {...authQuestionPropsData} />}
         </div>
       </div>
     </>

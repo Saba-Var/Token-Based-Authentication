@@ -5,18 +5,18 @@ import i18next from 'i18next'
 
 export const useLanguageSelector = () => {
   const [selectedLanObj, setSelectedLanObj] = useState(
-    languages[localStorage.getItem('language') as keyof typeof languages],
+    languages[localStorage.getItem('language') as Languages],
   )
 
   const updateLanguageState = (lan: Languages) => {
     i18next.changeLanguage(lan)
-    setSelectedLanObj(languages[lan as keyof typeof languages])
+    setSelectedLanObj(languages[lan])
     localStorage.setItem('language', lan)
   }
 
   const languagesList = useMemo(() => {
     return Object.keys(languages).map((key) => {
-      return languages[key as keyof typeof languages]
+      return languages[key as Languages]
     })
   }, [])
 

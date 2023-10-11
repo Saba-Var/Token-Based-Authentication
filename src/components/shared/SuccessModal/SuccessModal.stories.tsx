@@ -15,6 +15,7 @@ const meta: Meta<typeof SuccessModal> = {
     title: 'Title',
     description: 'Description',
     showOnlyCloseButton: true,
+    redirectUri: '/auth/log-in',
   },
 
   argTypes: {
@@ -49,6 +50,10 @@ const meta: Meta<typeof SuccessModal> = {
     },
     showOnlyCloseButton: {
       control: 'boolean',
+    },
+    redirectUri: {
+      control: 'text',
+      description: 'Redirect URI for the action link',
     },
   },
 }

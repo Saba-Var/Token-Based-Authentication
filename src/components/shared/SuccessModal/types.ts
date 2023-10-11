@@ -8,6 +8,7 @@ export type SuccessModalProps = {
   linkActionText?: string
   linkAction?: boolean
   description?: string
+  redirectUri?: string
   actionText?: string
   title: string
   show: boolean

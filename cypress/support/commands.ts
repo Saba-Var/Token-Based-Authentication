@@ -82,3 +82,13 @@ Cypress.Commands.add('requestPasswordResetWithError', (statusCode) => {
   })
   cy.get("[data-cy='success-modal']").should('not.exist')
 })
+
+Cypress.Commands.add('newPasswordRequest', (statusCode) => {
+  cy.intercept(
+    'PUT',
+    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/change-password?token=test-token`,
+    {
+      statusCode,
+    },
+  )
+})
