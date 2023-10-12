@@ -52,5 +52,6 @@
   "account_is_not_activated": "ანგარიში არ არის გააქტიურებული",
   "user_with_this_email_not_found": "მომხმარებელი ამ ელ-ფოსტით ვერ მოიძებნა",
   "new-password": "ახალი პაროლი",
-  "password_reset_success_instruction": "შენი პაროლი წარმატებით შეიცვალა. ახლა შეგიძლია შეხვიდე აპლიკაციაში ახალი პაროლით"
+  "password_reset_success_instruction": "შენი პაროლი წარმატებით შეიცვალა. ახლა შეგიძლია შეხვიდე აპლიკაციაში ახალი პაროლით",
+  "something_went_wrong": "დაფიქსირდა შეცდომა"
 }

@@ -33,3 +33,9 @@ export const newPasswordRequest = (
 ): MessagePromiseResponse => {
   return publicAxios.put(`/auth/change-password?token=${data.token}`, data)
 }
+
+export const refreshTokenRequest = (): Promise<
+  AxiosResponse<Exclude<AuthTokens, 'refreshToken'>>
+> => {
+  return publicAxios.get('/auth/refresh')
+}
