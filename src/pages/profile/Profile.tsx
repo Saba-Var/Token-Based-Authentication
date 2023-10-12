@@ -3,7 +3,7 @@ import useProfile from './useProfile'
 const Profile = () => {
   useProfile()
 
-  return <h1 className='text-4xl bg-green-300 h-screen'>Profile</h1>
+  return <div className='mt-32 px-4 sm:px-6'>Profile</div>
 }
 
 export default Profile

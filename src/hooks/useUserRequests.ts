@@ -2,7 +2,7 @@ import type { AxiosResponse } from 'axios'
 import { useAxiosPrivate } from '@/hooks'
 import type { User } from '@/types'
 
-export const useUserRequest = () => {
+export const useUserRequests = () => {
   const privateAxios = useAxiosPrivate()
 
   const getUserDataRequest = (): Promise<AxiosResponse<User>> => {

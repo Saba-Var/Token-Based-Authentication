@@ -8,6 +8,6 @@ export default defineConfig({
     baseUrl: 'http://localhost:3000',
   },
   env: {
-    CYPRESS_BACKEND_BASE_URI: 'https://token-based-authentication-api.vercel.app',
+    CYPRESS_BACKEND_API_BASE_URI: 'https://token-based-authentication-api.vercel.app',
   },
 })

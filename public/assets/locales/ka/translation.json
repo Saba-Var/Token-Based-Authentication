@@ -53,5 +53,7 @@
   "user_with_this_email_not_found": "მომხმარებელი ამ ელ-ფოსტით ვერ მოიძებნა",
   "new-password": "ახალი პაროლი",
   "password_reset_success_instruction": "შენი პაროლი წარმატებით შეიცვალა. ახლა შეგიძლია შეხვიდე აპლიკაციაში ახალი პაროლით",
-  "something_went_wrong": "დაფიქსირდა შეცდომა"
+  "something_went_wrong": "დაფიქსირდა შეცდომა",
+  "user_data_fetch_fail": "მომხმარებლის ინფორმაცია ვერ მოიძებნა",
+  "log_out": "გასვლა"
 }

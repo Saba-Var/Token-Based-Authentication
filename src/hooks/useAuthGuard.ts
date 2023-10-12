@@ -7,10 +7,10 @@ import { useEffect } from 'react'
 import Cookies from 'js-cookie'
 
 export const useAuthGuard = () => {
-  const dispatch = useDispatch()
   const { accessToken } = useSelector((state: StoreRootState) => state.authentication)
-  const navigate = useNavigate()
   const refreshToken = Cookies.get('refreshToken') as string
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const { data } = useQuery(['refreshedAccessToken'], () => refreshTokenRequest(refreshToken), {
     onSuccess: (data) => dispatch(setAccessToken(data.data.accessToken)),

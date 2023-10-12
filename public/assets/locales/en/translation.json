@@ -53,5 +53,7 @@
   "account_is_not_activated": "Account is not activated",
   "user_with_this_email_not_found": "User with this email not found",
   "new-password": "New password",
-  "something_went_wrong": "Something went wrong"
+  "something_went_wrong": "Something went wrong",
+  "user_data_fetch_fail": "User data fetch failed",
+  "log_out": "Log out"
 }
