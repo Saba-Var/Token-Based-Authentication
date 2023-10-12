@@ -12,13 +12,13 @@ const ProfileInputWrapper: React.FC<ProfileInputWrapperProps> = ({
     <div className='flex w-full gap-4 justify-between items-center text-gray-800 hover:text-gray-600 transition-all'>
       {children}
 
-      {showEditButton && (
-        <div className='w-20 hover:scale-105 ease-anm !duration-100 text-center'>
+      <div className='w-20 hover:scale-105 ease-anm !duration-100 text-center'>
+        {showEditButton && (
           <button onClick={onClick} type='button'>
             {t('change')}
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }

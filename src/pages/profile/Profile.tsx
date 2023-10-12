@@ -1,11 +1,21 @@
-import { LoadingIcon, TextInputField } from '@/components'
-import { ProfileInputWrapper } from './components'
+import { ProfileInputWrapper, ProfileInputField } from './components'
+import { LoadingIcon, Button } from '@/components'
 import { FormProvider } from 'react-hook-form'
 import useProfile from './useProfile'
 
 const Profile = () => {
-  const { setIsUserImageLoading, isUserImageLoading, submitHandler, handleSubmit, user, form } =
-    useProfile()
+  const {
+    disabledInputFieldsHandler,
+    setIsUserImageLoading,
+    disabledInputFields,
+    isUserImageLoading,
+    cancelHandler,
+    submitHandler,
+    handleSubmit,
+    user,
+    form,
+    t,
+  } = useProfile()
 
   return (
     <>
@@ -24,13 +34,39 @@ const Profile = () => {
 
           <FormProvider {...form}>
             <form onSubmit={handleSubmit(submitHandler)} className='mt-8'>
-              <ProfileInputWrapper showEditButton>
-                <TextInputField disabled name='username' />
-              </ProfileInputWrapper>
+              <ProfileInputField
+                onClick={() => disabledInputFieldsHandler('username')}
+                disabled={disabledInputFields.username}
+                name='username'
+              />
 
-              <ProfileInputWrapper showEditButton>
-                <TextInputField disabled name='email' />
-              </ProfileInputWrapper>
+              <ProfileInputField
+                onClick={() => disabledInputFieldsHandler('email')}
+                disabled={disabledInputFields.email}
+                name='email'
+              />
+
+              {(!disabledInputFields.email || !disabledInputFields.username) && (
+                <ProfileInputWrapper showEditButton={false}>
+                  <div className='grid grid-cols-2 gap-4 items-center justify-items-center mt-6 w-full ml-auto'>
+                    <Button
+                      stylesType='secondary-btn'
+                      onClick={cancelHandler}
+                      title={t('cancel')}
+                      className='h-12'
+                      fullWidth
+                    />
+
+                    <Button
+                      showLoadingIndicator
+                      className='h-12'
+                      title={t('save')}
+                      type='submit'
+                      fullWidth
+                    />
+                  </div>
+                </ProfileInputWrapper>
+              )}
             </form>
           </FormProvider>
         </div>

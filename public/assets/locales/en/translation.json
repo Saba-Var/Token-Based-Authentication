@@ -56,5 +56,7 @@
   "something_went_wrong": "Something went wrong",
   "user_data_fetch_fail": "User data fetch failed",
   "log_out": "Log out",
-  "change": "Change"
+  "change": "Change",
+  "cancel": "Cancel",
+  "save": "Save"
 }
