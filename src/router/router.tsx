@@ -1,11 +1,13 @@
 import { NavbarLayout, AuthPageLayout, RootLayout } from '@/components'
 import { createBrowserRouter } from 'react-router-dom'
 import SuspenseItself from './SuspenseItself'
+import ProtectedRoute from './ProtectedRoute'
 import {
   RequestPasswordReset,
   AccountActivation,
   NewPassword,
   NotFound,
+  Profile,
   SignUp,
   LogIn,
   Home,
@@ -58,6 +60,17 @@ const router = createBrowserRouter([
           {
             path: 'account-activation',
             element: <AccountActivation />,
+          },
+        ],
+      },
+
+      {
+        path: '/',
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: '/profile',
+            element: <Profile />,
           },
         ],
       },
