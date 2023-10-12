@@ -28,10 +28,10 @@ const SignUp = () => {
 
       <FormProvider {...form}>
         <form onSubmit={handleSubmit(submitHandler)} className='flex flex-col gap-1'>
-          <TextInputField name='username' />
-          <TextInputField name='email' />
-          <TextInputField name='password' type='password' />
-          <TextInputField name='passwordConfirmation' type='password' />
+          <TextInputField disabled={userRegistering} name='username' />
+          <TextInputField disabled={userRegistering} name='email' />
+          <TextInputField disabled={userRegistering} name='password' type='password' />
+          <TextInputField disabled={userRegistering} name='passwordConfirmation' type='password' />
 
           <Button
             showLoadingIndicator={userRegistering}

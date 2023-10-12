@@ -28,8 +28,18 @@ const NewPassword = () => {
 
       <FormProvider {...form}>
         <form onSubmit={handleSubmit(submitHandler)} className='flex flex-col gap-1'>
-          <TextInputField label={t('new-password')} name='password' type='password' />
-          <TextInputField name='passwordConfirmation' type='password' />
+          <TextInputField
+            disabled={isPasswordChanging}
+            label={t('new-password')}
+            name='password'
+            type='password'
+          />
+
+          <TextInputField
+            disabled={isPasswordChanging}
+            name='passwordConfirmation'
+            type='password'
+          />
 
           <Button
             disabled={isPasswordChanging || !isFormValid}
