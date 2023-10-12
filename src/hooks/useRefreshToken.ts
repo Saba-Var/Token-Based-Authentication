@@ -1,21 +1,26 @@
 import { refreshTokenRequest } from '@/services'
 import { useDispatch } from 'react-redux'
 import { setAccessToken } from '@/store'
+import Cookies from 'js-cookie'
 
 export const useRefreshToken = () => {
   const dispatch = useDispatch()
 
-  const refreshToken = async () => {
+  const getNewAccessTokenByRefresh = async () => {
     try {
-      const response = await refreshTokenRequest()
+      const refreshToken = Cookies.get('refreshToken')
 
-      dispatch(setAccessToken(response?.data?.accessToken))
-
-      return response
+      if (refreshToken) {
+        const response = await refreshTokenRequest(refreshToken)
+        dispatch(setAccessToken(response?.data?.accessToken))
+        return response
+      } else {
+        return false
+      }
     } catch (error: any) {
       return false
     }
   }
 
-  return refreshToken
+  return { getNewAccessTokenByRefresh }
 }

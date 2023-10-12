@@ -6,6 +6,7 @@ import {
   AccountActivation,
   NewPassword,
   NotFound,
+  Profile,
   SignUp,
   LogIn,
   Home,
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
             element: <AccountActivation />,
           },
         ],
+      },
+
+      {
+        path: '/profile',
+        element: <Profile />,
       },
 
       {

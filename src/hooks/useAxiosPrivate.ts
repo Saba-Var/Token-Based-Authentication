@@ -9,7 +9,8 @@ import { useEffect } from 'react'
 
 export const useAxiosPrivate = () => {
   const { accessToken } = useSelector((state: StoreRootState) => state.authentication)
-  const refresh = useRefreshToken()
+
+  const { getNewAccessTokenByRefresh } = useRefreshToken()
   const { t } = useTranslation()
   const navigate = useNavigate()
 
@@ -39,15 +40,17 @@ export const useAxiosPrivate = () => {
         const previousRequest = error?.config
 
         if (status === 401 && !previousRequest?.sent) {
-          const accessToken = await refresh()
+          return getNewAccessTokenByRefresh().then((response: any) => {
+            const refreshedAccessToken = response?.data?.accessToken
 
-          if (!accessToken) {
-            navigate('/')
-          }
+            if (!refreshedAccessToken) {
+              navigate('/')
+            }
 
-          previousRequest.sent = true
-          previousRequest.headers['Authorization'] = `Bearer ${accessToken}`
-          return privateAxios(previousRequest)
+            previousRequest.sent = true
+            previousRequest.headers['Authorization'] = `Bearer ${refreshedAccessToken}`
+            return privateAxios(previousRequest)
+          })
         }
 
         return Promise.reject(error)
@@ -58,7 +61,7 @@ export const useAxiosPrivate = () => {
       privateAxios.interceptors.response.eject(responseIntercept)
       privateAxios.interceptors.request.eject(requestIntercept)
     }
-  }, [accessToken, refresh, navigate, t])
+  }, [accessToken, navigate, t, getNewAccessTokenByRefresh])
 
   return privateAxios
 }
