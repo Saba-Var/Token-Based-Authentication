@@ -1,6 +1,6 @@
+import type { User, MessagePromiseResponse } from '@/types'
 import type { AxiosResponse } from 'axios'
 import { useAxiosPrivate } from '@/hooks'
-import type { User } from '@/types'
 
 export const useUserRequests = () => {
   const privateAxios = useAxiosPrivate()
@@ -9,5 +9,9 @@ export const useUserRequests = () => {
     return privateAxios.get('/user')
   }
 
-  return { getUserDataRequest }
+  const updateUsernameRequest = (username: string): MessagePromiseResponse => {
+    return privateAxios.patch('/user', { username })
+  }
+
+  return { getUserDataRequest, updateUsernameRequest }
 }

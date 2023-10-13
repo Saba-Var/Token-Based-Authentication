@@ -15,10 +15,10 @@ import {
 
 const router = createBrowserRouter([
   {
+    path: '/',
     element: <RootLayout />,
     children: [
       {
-        path: '/',
         element: <NavbarLayout />,
         children: [
           {

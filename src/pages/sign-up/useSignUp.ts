@@ -1,10 +1,10 @@
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
+import { registerUserRequest } from '@/services'
 import type { SignUpFormValues } from '@/types'
 import { useTranslation } from 'react-i18next'
 import { signUpSchema } from '@/validation'
-import { registerUserRequest } from '@/services'
 import { useState } from 'react'
 
 const useSignUp = () => {

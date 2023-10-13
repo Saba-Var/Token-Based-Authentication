@@ -1,10 +1,11 @@
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useForm, type SubmitHandler } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser, type StoreRootState } from '@/store'
-import { useQuery } from '@tanstack/react-query'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { useTranslation } from 'react-i18next'
+import { usernameSchema } from '@/validation'
 import { useUserRequests } from '@/hooks'
-import { useForm } from 'react-hook-form'
-import { ProfileForm } from './types'
 import { emitToast } from '@/utils'
 import { useState } from 'react'
 
@@ -16,15 +17,16 @@ const useProfile = () => {
   const [disabledInputFields, setDisabledInputFields] = useState(initialDisabledInputs)
   const [isUserImageLoading, setIsUserImageLoading] = useState(true)
 
+  const { getUserDataRequest, updateUsernameRequest } = useUserRequests()
+  const queryClient = useQueryClient()
   const user = useSelector((state: StoreRootState) => state.user)
-  const { getUserDataRequest } = useUserRequests()
   const dispatch = useDispatch()
   const { t } = useTranslation()
 
-  const form = useForm<ProfileForm>({
+  const form = useForm<{ username: string }>({
+    resolver: yupResolver(usernameSchema),
     defaultValues: {
       username: '',
-      email: '',
     },
     mode: 'onTouched',
   })
@@ -34,11 +36,13 @@ const useProfile = () => {
   useQuery(['user'], getUserDataRequest, {
     onSuccess: (data) => {
       setValue('username', data.data.username)
-      setValue('email', data.data.email)
       dispatch(setUser(data.data))
     },
     onError: () => emitToast(t('user_data_fetch_fail'), 'error'),
   })
+
+  const { mutate: updateUsernameMutation, isLoading: isUserDataUpdating } =
+    useMutation(updateUsernameRequest)
 
   const disabledInputFieldsHandler = (name: keyof typeof disabledInputFields) => {
     setDisabledInputFields((prev) => ({
@@ -49,16 +53,28 @@ const useProfile = () => {
 
   const cancelHandler = () => {
     setDisabledInputFields(initialDisabledInputs)
-    form.reset({ email: user.email, username: user.username })
+    form.reset({ username: user.username })
   }
 
-  const submitHandler = () => {}
+  const submitHandler: SubmitHandler<{ username: string }> = ({ username }) => {
+    updateUsernameMutation(username, {
+      onSuccess: () => {
+        emitToast(t('user_data_update_success'), 'success')
+        const updatedUserData = { ...user, username }
+        queryClient.setQueryData(['user'], { data: updatedUserData })
+        form.reset({ username })
+        dispatch(setUser(updatedUserData))
+        disabledInputFieldsHandler('username')
+      },
+    })
+  }
 
   return {
     disabledInputFieldsHandler,
     setIsUserImageLoading,
     disabledInputFields,
     isUserImageLoading,
+    isUserDataUpdating,
     cancelHandler,
     submitHandler,
     handleSubmit,

@@ -58,5 +58,6 @@
   "log_out": "Log out",
   "change": "Change",
   "cancel": "Cancel",
-  "save": "Save"
+  "save": "Save",
+  "user_data_update_success": "User data updated successfully"
 }

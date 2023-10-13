@@ -1,4 +1,5 @@
 export * from './newPasswordSchema'
+export * from './usernameSchema'
 export * from './signUpSchema'
 export * from './logInSchema'
 export * from './emailSchema'

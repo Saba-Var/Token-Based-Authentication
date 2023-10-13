@@ -9,6 +9,7 @@ const Profile = () => {
     setIsUserImageLoading,
     disabledInputFields,
     isUserImageLoading,
+    isUserDataUpdating,
     cancelHandler,
     submitHandler,
     handleSubmit,
@@ -35,8 +36,8 @@ const Profile = () => {
           <FormProvider {...form}>
             <form onSubmit={handleSubmit(submitHandler)} className='mt-8'>
               <ProfileInputField
+                disabled={disabledInputFields.username || isUserDataUpdating}
                 onClick={() => disabledInputFieldsHandler('username')}
-                disabled={disabledInputFields.username}
                 name='username'
               />
 
@@ -50,6 +51,7 @@ const Profile = () => {
                 <ProfileInputWrapper showEditButton={false}>
                   <div className='grid grid-cols-2 gap-4 items-center justify-items-center mt-6 w-full ml-auto'>
                     <Button
+                      disabled={isUserDataUpdating}
                       stylesType='secondary-btn'
                       onClick={cancelHandler}
                       title={t('cancel')}
@@ -58,9 +60,10 @@ const Profile = () => {
                     />
 
                     <Button
+                      disabled={isUserDataUpdating}
                       showLoadingIndicator
-                      className='h-12'
                       title={t('save')}
+                      className='h-12'
                       type='submit'
                       fullWidth
                     />
