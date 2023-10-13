@@ -1,6 +1,7 @@
 import { ProfileInputWrapper, ProfileInputField } from './components'
 import { LoadingIcon, Button } from '@/components'
 import { FormProvider } from 'react-hook-form'
+import { Form } from 'react-router-dom'
 import useProfile from './useProfile'
 
 const Profile = () => {
@@ -10,6 +11,7 @@ const Profile = () => {
     disabledInputFields,
     isUserImageLoading,
     isUserDataUpdating,
+    isUsernameValid,
     cancelHandler,
     submitHandler,
     handleSubmit,
@@ -20,7 +22,7 @@ const Profile = () => {
 
   return (
     <>
-      {user._id ? (
+      {user.username ? (
         <div className='mt-36 md:mt-44 bg-slate-200 p-4 md:p-12 rounded-lg max-w-2xl xl:max-w-3xl mx-auto'>
           <div className='flex justify-center'>
             <img
@@ -34,7 +36,7 @@ const Profile = () => {
           </div>
 
           <FormProvider {...form}>
-            <form onSubmit={handleSubmit(submitHandler)} className='mt-8'>
+            <Form onSubmit={handleSubmit(submitHandler)} className='mt-8'>
               <ProfileInputField
                 disabled={disabledInputFields.username || isUserDataUpdating}
                 onClick={() => disabledInputFieldsHandler('username')}
@@ -44,6 +46,7 @@ const Profile = () => {
               <ProfileInputField
                 onClick={() => disabledInputFieldsHandler('email')}
                 disabled={disabledInputFields.email}
+                defaultValue={user.email}
                 name='email'
               />
 
@@ -60,8 +63,8 @@ const Profile = () => {
                     />
 
                     <Button
-                      disabled={isUserDataUpdating}
-                      showLoadingIndicator
+                      disabled={isUserDataUpdating || !isUsernameValid}
+                      showLoadingIndicator={isUserDataUpdating}
                       title={t('save')}
                       className='h-12'
                       type='submit'
@@ -70,7 +73,7 @@ const Profile = () => {
                   </div>
                 </ProfileInputWrapper>
               )}
-            </form>
+            </Form>
           </FormProvider>
         </div>
       ) : (

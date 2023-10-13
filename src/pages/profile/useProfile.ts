@@ -31,7 +31,12 @@ const useProfile = () => {
     mode: 'onTouched',
   })
 
-  const { handleSubmit, setValue } = form
+  const {
+    formState: { isValid: isUsernameValid },
+    handleSubmit,
+    setValue,
+    setError,
+  } = form
 
   useQuery(['user'], getUserDataRequest, {
     onSuccess: (data) => {
@@ -66,6 +71,13 @@ const useProfile = () => {
         dispatch(setUser(updatedUserData))
         disabledInputFieldsHandler('username')
       },
+      onError: (error: any) => {
+        if (error.response.status === 409) {
+          setError('username', {
+            message: t('username_is_taken'),
+          })
+        }
+      },
     })
   }
 
@@ -75,6 +87,7 @@ const useProfile = () => {
     disabledInputFields,
     isUserImageLoading,
     isUserDataUpdating,
+    isUsernameValid,
     cancelHandler,
     submitHandler,
     handleSubmit,

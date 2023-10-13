@@ -9,6 +9,7 @@ const TextInputField: React.FC<InputFieldProps> = ({
   showValidation = true,
   autoComplete = 'on',
   showEyeIcon = true,
+  defaultValue = '',
   placeholder = '',
   disabled = false,
   required = true,
@@ -43,6 +44,7 @@ const TextInputField: React.FC<InputFieldProps> = ({
           } disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500 disabled:ring-gray-200 lg:text-base`}
           placeholder={placeholder || label || t(name)}
           autoComplete={autoComplete}
+          defaultValue={defaultValue}
           disabled={disabled}
           type={inputType}
         />
