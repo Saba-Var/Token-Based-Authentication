@@ -3,14 +3,21 @@ import type { ProfileInputFieldProps } from './types'
 import { TextInputField } from '@/components'
 
 const ProfileInputField: React.FC<ProfileInputFieldProps> = ({
+  showEditButton,
   defaultValue,
   disabled,
   onClick,
+  label,
   name,
 }) => {
   return (
-    <ProfileInputWrapper showEditButton={disabled} onClick={onClick}>
-      <TextInputField defaultValue={defaultValue} disabled={disabled} name={name} />
+    <ProfileInputWrapper showEditButton={showEditButton} onClick={onClick}>
+      <TextInputField
+        label={label ? label : ''}
+        defaultValue={defaultValue}
+        disabled={disabled}
+        name={name}
+      />
     </ProfileInputWrapper>
   )
 }

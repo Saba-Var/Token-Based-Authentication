@@ -1,7 +1,6 @@
 import { TextInputField, Button, SuccessModal } from '@/components'
 import { FormProvider } from 'react-hook-form'
 import useNewPassword from './useNewPassword'
-import { Form } from 'react-router-dom'
 
 const NewPassword = () => {
   const {
@@ -28,7 +27,7 @@ const NewPassword = () => {
       />
 
       <FormProvider {...form}>
-        <Form onSubmit={handleSubmit(submitHandler)} className='flex flex-col gap-1'>
+        <form onSubmit={handleSubmit(submitHandler)} className='flex flex-col gap-1'>
           <TextInputField
             disabled={isPasswordChanging}
             label={t('new-password')}
@@ -50,7 +49,7 @@ const NewPassword = () => {
             className='mt-4 !text-base'
             type='submit'
           />
-        </Form>
+        </form>
       </FormProvider>
     </>
   )

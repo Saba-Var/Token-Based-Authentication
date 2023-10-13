@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <Popover className='relative bg-white shadow'>
-      <div className='mx-auto w-screen shadow-md px-4 sm:px-6 fixed bg-white z-[99] top-0 left-0'>
+      <div className='mx-auto w-screen shadow-md px-4 sm:px-6 fixed bg-white z-10 top-0 left-0'>
         <div className='flex items-center justify-between py-6 md:justify-start md:space-x-10'>
           <div className='flex justify-start lg:w-0 lg:flex-1'>
             <p className='text-3xl md:text-4xl cursor-pointer items-center flex font-bold tracking-tight text-gray-900'>

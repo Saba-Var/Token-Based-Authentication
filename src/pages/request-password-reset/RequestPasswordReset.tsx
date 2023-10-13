@@ -1,7 +1,6 @@
 import { TextInputField, Button, SuccessModal } from '@/components'
 import useRequestPasswordReset from './useRequestPasswordReset'
 import { FormProvider } from 'react-hook-form'
-import { Form } from 'react-router-dom'
 
 const RequestPasswordReset = () => {
   const {
@@ -28,7 +27,7 @@ const RequestPasswordReset = () => {
       />
 
       <FormProvider {...form}>
-        <Form onSubmit={handleSubmit(submitHandler)}>
+        <form onSubmit={handleSubmit(submitHandler)}>
           <div className='flex flex-col gap-2'>
             <TextInputField disabled={isLoading} name='email' />
           </div>
@@ -42,7 +41,7 @@ const RequestPasswordReset = () => {
             type='submit'
             fullWidth
           />
-        </Form>
+        </form>
       </FormProvider>
     </>
   )

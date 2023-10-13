@@ -1,6 +1,6 @@
 import { CheckboxInputField, TextInputField, Button } from '@/components'
 import { FormProvider } from 'react-hook-form'
-import { Form, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import useLogin from './useLogIn'
 
 const LogIn = () => {
@@ -8,7 +8,7 @@ const LogIn = () => {
 
   return (
     <FormProvider {...form}>
-      <Form onSubmit={handleSubmit(submitHandler)}>
+      <form onSubmit={handleSubmit(submitHandler)}>
         <div className='flex flex-col gap-2'>
           <TextInputField disabled={authorizing} name='email' />
           <TextInputField disabled={authorizing} name='password' type='password' />
@@ -34,7 +34,7 @@ const LogIn = () => {
           type='submit'
           fullWidth
         />
-      </Form>
+      </form>
     </FormProvider>
   )
 }

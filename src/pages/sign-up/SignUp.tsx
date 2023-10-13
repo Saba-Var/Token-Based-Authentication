@@ -1,7 +1,6 @@
 import { TextInputField, Button, SuccessModal } from '@/components'
 import { FormProvider } from 'react-hook-form'
 import useSignUp from './useSignUp'
-import { Form } from 'react-router-dom'
 
 const SignUp = () => {
   const {
@@ -28,7 +27,7 @@ const SignUp = () => {
       />
 
       <FormProvider {...form}>
-        <Form onSubmit={handleSubmit(submitHandler)} className='flex flex-col gap-1'>
+        <form onSubmit={handleSubmit(submitHandler)} className='flex flex-col gap-1'>
           <TextInputField disabled={userRegistering} name='username' />
           <TextInputField disabled={userRegistering} name='email' />
           <TextInputField disabled={userRegistering} name='password' type='password' />
@@ -42,7 +41,7 @@ const SignUp = () => {
             title={t('sign-up')}
             type='submit'
           />
-        </Form>
+        </form>
       </FormProvider>
     </>
   )

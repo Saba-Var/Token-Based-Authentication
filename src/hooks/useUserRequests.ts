@@ -13,5 +13,9 @@ export const useUserRequests = () => {
     return privateAxios.patch('/user', { username })
   }
 
-  return { getUserDataRequest, updateUsernameRequest }
+  const changeEmailRequest = (newEmail: string): MessagePromiseResponse => {
+    return privateAxios.get(`/user/change-email?newEmail=${newEmail}`)
+  }
+
+  return { getUserDataRequest, updateUsernameRequest, changeEmailRequest }
 }
