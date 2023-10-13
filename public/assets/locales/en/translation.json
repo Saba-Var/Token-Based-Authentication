@@ -65,5 +65,7 @@
   "new_email": "New email",
   "username_update_success": "Username updated successfully",
   "email_confirmation_sent": "Email confirmation sent",
-  "email_confirmation_sent_description": "We have sent a confirmation email to the provided email address. Please check your inbox for further instructions to activate your new email address."
+  "email_confirmation_sent_description": "We have sent a confirmation email to the provided email address. Please check your inbox for further instructions to activate your new email address.",
+  "email_could_not_be_changed": "Email could not be changed. You can request a new email change link.",
+  "email_changed_successfully": "Email changed successfully"
 }

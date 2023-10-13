@@ -6,13 +6,16 @@ import useProfile from './useProfile'
 const Profile = () => {
   const {
     setShowEmailConfirmationSentModal,
+    setNewEmailActivationSuccessModal,
     showEmailConfirmationSentModal,
+    newEmailActivationSuccessModal,
     disabledInputFieldsHandler,
     setIsUserImageLoading,
     disabledInputFields,
     isUserImageLoading,
     isUserDataUpdating,
     disableFormButtons,
+    isEmailActivating,
     cancelHandler,
     submitHandler,
     handleSubmit,
@@ -30,10 +33,17 @@ const Profile = () => {
         title={t('email_confirmation_sent')}
         linkActionText={t('go_to_gmail')}
         redirectUri='https://gmail.com'
-        linkAction={true}
+        linkAction
       />
 
-      {user.username ? (
+      <SuccessModal
+        setSuccess={setNewEmailActivationSuccessModal}
+        title={t('email_changed_successfully')}
+        show={newEmailActivationSuccessModal}
+        showOnlyCloseButton
+      />
+
+      {user.username && !isEmailActivating ? (
         <div className='mt-36 md:mt-44 lg:mb-14 3xl:mb-0 3xl:mt-52 bg-slate-200 p-4 md:p-12 rounded-lg max-w-2xl xl:max-w-3xl mx-auto'>
           <div className='flex justify-center'>
             <img

@@ -49,3 +49,11 @@ export type User = {
   email: string
   image: string
 }
+
+export type NewEmailActivationResponse = {
+  _id: string
+  email: string
+  message: string
+  refreshToken: string
+  accessToken: string
+}
