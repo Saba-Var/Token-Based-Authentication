@@ -8,7 +8,7 @@ Cypress.Commands.add('fillSignUpForm', () => {
 })
 
 Cypress.Commands.add('logInRequest', (statusCode) => {
-  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-in`, {
+  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/sign-in`, {
     statusCode,
   })
 })
@@ -30,7 +30,7 @@ Cypress.Commands.add('homeIconNavigation', () => {
 })
 
 Cypress.Commands.add('signUpDuplicateError', (fieldName) => {
-  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/sign-up`, {
+  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/sign-up`, {
     statusCode: 409,
     body: {
       message: `${fieldName} is taken`,
@@ -50,7 +50,7 @@ Cypress.Commands.add('accountActivationRequest', (statusCode) => {
   const token = 'test'
   cy.intercept(
     'POST',
-    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/account-activation?token=${token}`,
+    `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/account-activation?token=${token}`,
     {
       statusCode,
     },
@@ -66,7 +66,7 @@ Cypress.Commands.add('accountActivationRequest', (statusCode) => {
 Cypress.Commands.add('resetPasswordEmailRequest', ({ email, statusCode }) => {
   cy.intercept(
     'GET',
-    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/change-password-email?email=${email}`,
+    `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/change-password-email?email=${email}`,
     {
       statusCode,
     },
@@ -86,7 +86,7 @@ Cypress.Commands.add('requestPasswordResetWithError', (statusCode) => {
 Cypress.Commands.add('newPasswordRequest', (statusCode) => {
   cy.intercept(
     'PUT',
-    `${Cypress.env('CYPRESS_BACKEND_BASE_URI')}/auth/change-password?token=test-token`,
+    `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/change-password?token=test-token`,
     {
       statusCode,
     },

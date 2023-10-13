@@ -8,6 +8,7 @@ export interface InputFieldProps extends UseTextInputParams {
   autoComplete?: 'off' | 'on' | 'new-password'
   labelClasses?: string
   showEyeIcon?: boolean
+  defaultValue?: string
   placeholder?: string
   required?: boolean
   disabled?: boolean

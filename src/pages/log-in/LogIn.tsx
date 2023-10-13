@@ -10,12 +10,12 @@ const LogIn = () => {
     <FormProvider {...form}>
       <form onSubmit={handleSubmit(submitHandler)}>
         <div className='flex flex-col gap-2'>
-          <TextInputField name='email' />
-          <TextInputField name='password' type='password' />
+          <TextInputField disabled={authorizing} name='email' />
+          <TextInputField disabled={authorizing} name='password' type='password' />
         </div>
 
         <div className='flex mb-4 mt-4 items-center justify-between'>
-          <CheckboxInputField text={t('remember_me')} name='rememberMe' />
+          <CheckboxInputField disabled={authorizing} text={t('remember_me')} name='rememberMe' />
           <Link
             className='font-medium text-sm lg:text-base cursor-pointer text-blue-600 hover:underline hover:text-blue-700'
             to='/auth/request-password-reset'

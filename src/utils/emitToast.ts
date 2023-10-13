@@ -9,5 +9,6 @@ export const emitToast = (message: string, type: 'success' | 'error' = 'success'
     draggable: true,
     progress: undefined,
     theme: 'light',
+    pauseOnHover: false,
   })
 }

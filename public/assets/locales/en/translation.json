@@ -53,5 +53,19 @@
   "account_is_not_activated": "Account is not activated",
   "user_with_this_email_not_found": "User with this email not found",
   "new-password": "New password",
-  "something_went_wrong": "Something went wrong"
+  "something_went_wrong": "Something went wrong",
+  "user_data_fetch_fail": "User data fetch failed",
+  "log_out": "Log out",
+  "change": "Change",
+  "cancel": "Cancel",
+  "save": "Save",
+  "user_data_update_success": "User data updated successfully",
+  "change_email": "Change email",
+  "change_email_instruction": "Enter your new email address. We will send you a confirmation email to provided email address. You need to confirm your new email address to update your account.",
+  "new_email": "New email",
+  "username_update_success": "Username updated successfully",
+  "email_confirmation_sent": "Email confirmation sent",
+  "email_confirmation_sent_description": "We have sent a confirmation email to the provided email address. Please check your inbox for further instructions to activate your new email address.",
+  "email_could_not_be_changed": "Email could not be changed. You can request a new email change link.",
+  "email_changed_successfully": "Email changed successfully"
 }
