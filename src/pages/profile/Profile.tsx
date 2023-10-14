@@ -89,6 +89,7 @@ const Profile = () => {
                     <Button
                       stylesType='secondary-btn'
                       onClick={cancelHandler}
+                      data-cy='cancel-button'
                       title={t('cancel')}
                       className='h-12'
                       fullWidth
@@ -97,6 +98,7 @@ const Profile = () => {
                     <Button
                       showLoadingIndicator={isUserDataUpdating}
                       disabled={disableFormButtons}
+                      data-cy='save-button'
                       title={t('save')}
                       className='h-12'
                       type='submit'

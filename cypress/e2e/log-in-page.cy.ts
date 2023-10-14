@@ -59,13 +59,7 @@ describe('Log in page', () => {
   })
 
   it('Should navigate to profile page if the credentials are correct', () => {
-    cy.logInRequest(200)
-    cy.get('@email-input').type('correctemail@gmail.com')
-    cy.get('@password-input').type('correctpassword')
-    cy.get('@log-in-button').click({
-      force: true,
-    })
-    cy.url().should('include', '/profile')
+    cy.successfulLogIn()
   })
 
   it('Should see error message if the credentials are incorrect and also user should stay on the same page', () => {

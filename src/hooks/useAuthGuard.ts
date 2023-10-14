@@ -17,12 +17,19 @@ export const useAuthGuard = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  const { data } = useQuery(['refreshedAccessToken'], () => refreshTokenRequest(refreshToken), {
-    onSuccess: (data) => dispatch(setAccessToken(data.data.accessToken)),
-    onError: () => navigate('/auth/log-in'),
-    enabled: !accessToken && !!refreshToken,
-    retry: 2,
-  })
+  const { data } = useQuery(
+    ['refreshedAccessToken', refreshToken],
+    () => refreshTokenRequest(refreshToken),
+    {
+      onSuccess: (data) => dispatch(setAccessToken(data.data.accessToken)),
+      onError: () => {
+        navigate('/auth/log-in')
+        Cookies.remove('refreshToken')
+      },
+      enabled: !accessToken && !!refreshToken,
+      retry: 1,
+    },
+  )
 
   useQuery(['user'], getUserDataRequest, {
     onSuccess: (data) => dispatch(setUser(data.data)),

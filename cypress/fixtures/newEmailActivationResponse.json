@@ -1,0 +1,6 @@
+{
+  "refreshToken": "new-refresh-token",
+  "accessToken": "new-access-token",
+  "email": "new@gmail.com",
+  "id": "test-id"
+}

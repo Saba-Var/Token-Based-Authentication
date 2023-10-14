@@ -19,7 +19,11 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        element: <NavbarLayout />,
+        element: (
+          <SuspenseItself>
+            <NavbarLayout />
+          </SuspenseItself>
+        ),
         children: [
           {
             index: true,

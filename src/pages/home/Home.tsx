@@ -1,4 +1,5 @@
 import { tokenAuthFlowEn, tokenAuthFlowKa } from '@/assets'
+import { useAutomaticProfileRedirect } from '@/hooks'
 import { GridBackgroundIcon } from '@/components'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -6,6 +7,7 @@ import i18next from 'i18next'
 
 const Home = () => {
   const { t } = useTranslation()
+  useAutomaticProfileRedirect()
 
   return (
     <div className='relative pt-14 lg:flex items-center isolate overflow-hidden bg-white min-h-screen'>

@@ -46,6 +46,7 @@ const Navbar = () => {
               </div>
             ) : (
               <Button
+                data-cy='navbar-log-out'
                 onClick={logoutHandler}
                 stylesType='danger-btn'
                 title={t('log_out')}
