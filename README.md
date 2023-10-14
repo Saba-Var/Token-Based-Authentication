@@ -16,20 +16,16 @@ Token-Based Authentication app offers a secure and efficient way to register and
 - [](#-4)
   - [Storybook](#storybook)
 - [](#-5)
-  - [Setting up Eslint \& Prettier](#setting-up-eslint--prettier)
-    - [Visual Studio Code](#visual-studio-code)
-    - [WebStorm](#webstorm)
-- [](#-6)
   - [Git rules](#git-rules)
     - [Semantic Commit types](#semantic-commit-types)
     - [Branches](#branches)
+- [](#-6)
+  - [Setting up Eslint \& Prettier](#setting-up-eslint--prettier)
+    - [Visual Studio Code](#visual-studio-code)
+    - [WebStorm](#webstorm)
 - [](#-7)
-  - [Setting up Eslint \& Prettier](#setting-up-eslint--prettier-1)
-    - [Visual Studio Code](#visual-studio-code-1)
-    - [WebStorm](#webstorm-1)
-- [](#-8)
   - [Project Structure](#project-structure)
-- [](#-9)
+- [](#-8)
   - [Live URIs](#live-uris)
 
 #
@@ -147,26 +143,6 @@ npm run storybook
 ```
 
 You will be redirected automatically to [localhost:6006](http://localhost:6006/)
-
-#
-
-## Setting up Eslint & Prettier
-
-#### Visual Studio Code
-
-1\. You need to install following extensions in VS Code [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-#### WebStorm
-
-1\. Open settings `Ctrl + comma`
-
-2\. Search for Prettier and then select `on save`. Don't forget to choose Prettier package
-
-3\. Search for Eslint and make sure it is not disabled
-
-4\. Go to Keymap and search Eslint
-
-5\. Change the shortcut of FixEslintProblems
 
 #
 
