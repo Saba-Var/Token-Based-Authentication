@@ -12,13 +12,21 @@ declare global {
 
       changeLanguage(languageLocale: 'en' | 'ka'): Chainable<JQuery<HTMLElement>>
 
+      activateNewEmailRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
+
+      updateUsernameRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
+
       signUpDuplicateError(fieldName: string): Chainable<JQuery<HTMLElement>>
+
+      changeEmailRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
 
       newPasswordRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
 
       logInRequest(statusCode: number): Chainable<JQuery<HTMLElement>>
 
       homeIconNavigation(): Chainable<JQuery<HTMLElement>>
+
+      successfulLogIn(): Chainable<JQuery<HTMLElement>>
 
       fillSignUpForm(): Chainable<JQuery<HTMLElement>>
 

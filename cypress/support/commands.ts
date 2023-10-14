@@ -8,8 +8,77 @@ Cypress.Commands.add('fillSignUpForm', () => {
 })
 
 Cypress.Commands.add('logInRequest', (statusCode) => {
-  cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/sign-in`, {
-    statusCode,
+  cy.fixture('authTokens').then((authTokens) => {
+    cy.intercept('POST', `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/sign-in`, {
+      body: authTokens,
+      statusCode,
+    })
+  })
+})
+
+Cypress.Commands.add('successfulLogIn', () => {
+  cy.visit('/auth/log-in')
+  cy.logInRequest(200)
+  cy.get('[data-cy="email-input"]').type('correctemail@gmail.com')
+  cy.get('[data-cy="password-input"]').type('correctpassword')
+  cy.get('[data-cy="log-in-button"]').click({
+    force: true,
+  })
+  cy.fixture('user').then((user) => {
+    cy.intercept('GET', `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/user`, {
+      statusCode: 200,
+      body: user,
+    })
+  })
+
+  cy.intercept(
+    'GET',
+    `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/auth/refresh?refreshToken=testRefreshToken`,
+    {
+      body: {
+        accessToken: 'newTestAccessToken',
+      },
+      statusCode: 200,
+    },
+  )
+  cy.url().should('include', '/profile')
+})
+
+Cypress.Commands.add('updateUsernameRequest', (statusCode) => {
+  cy.fixture('updatedUser').then((updatedUser) => {
+    cy.intercept('PATCH', `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/user`, {
+      body: { username: updatedUser.username },
+      statusCode,
+    })
+  })
+})
+
+Cypress.Commands.add('changeEmailRequest', (statusCode) => {
+  cy.fixture('updatedUser').then((updatedUser) => {
+    cy.intercept(
+      'GET',
+      `${Cypress.env('CYPRESS_BACKEND_API_BASE_URI')}/user/change-email?newEmail=${
+        updatedUser.email
+      }`,
+      {
+        statusCode,
+      },
+    )
+  })
+})
+
+Cypress.Commands.add('activateNewEmailRequest', (statusCode) => {
+  cy.fixture('newEmailActivationResponse').then((response) => {
+    cy.intercept(
+      'PUT',
+      `${Cypress.env(
+        'CYPRESS_BACKEND_API_BASE_URI',
+      )}/user/activate-email?token=emailActivationToken`,
+      {
+        statusCode,
+        body: response,
+      },
+    )
   })
 })
 

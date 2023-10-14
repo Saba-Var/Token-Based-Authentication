@@ -1,4 +1,5 @@
 export type ProfileInputFieldProps = {
+  cySelectorName?: string
   showEditButton: boolean
   defaultValue?: string
   onClick?: () => void

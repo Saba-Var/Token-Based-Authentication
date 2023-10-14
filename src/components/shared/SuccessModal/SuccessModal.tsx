@@ -116,6 +116,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
                     className={`mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 outline-none py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm`}
                     onClick={() => setSuccess(false)}
                     ref={cancelButtonRef}
+                    data-cy='success-modal-close-button'
                   >
                     {t('close')}
                   </button>

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 const ProfileInputWrapper: React.FC<ProfileInputWrapperProps> = ({
   showEditButton = true,
   onClick = () => {},
+  cySelectorName,
   children,
 }) => {
   const { t } = useTranslation()
@@ -14,7 +15,7 @@ const ProfileInputWrapper: React.FC<ProfileInputWrapperProps> = ({
 
       <div className='w-20 hover:scale-105 ease-anm !duration-100 text-center'>
         {showEditButton && (
-          <button onClick={onClick} type='button'>
+          <button data-cy={`${cySelectorName}-change-btn`} onClick={onClick} type='button'>
             {t('change')}
           </button>
         )}

@@ -27,7 +27,7 @@ export const useAuthGuard = () => {
         Cookies.remove('refreshToken')
       },
       enabled: !accessToken && !!refreshToken,
-      retry: 2,
+      retry: 1,
     },
   )
 

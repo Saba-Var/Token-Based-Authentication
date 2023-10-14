@@ -11,7 +11,7 @@ const ProfileInputField: React.FC<ProfileInputFieldProps> = ({
   name,
 }) => {
   return (
-    <ProfileInputWrapper showEditButton={showEditButton} onClick={onClick}>
+    <ProfileInputWrapper cySelectorName={name} showEditButton={showEditButton} onClick={onClick}>
       <TextInputField
         label={label ? label : ''}
         defaultValue={defaultValue}
