@@ -2,7 +2,7 @@
   "log_in": "Log in",
   "sign_up": "Sign up",
   "dont_have_an_account": "Don't have an account",
-  "token_based": "Token-based",
+  "token_based": "Token-Based",
   "authentication": "Authentication",
   "hero_token_description": "A Refresh Token is a special kind of token that can be used to obtain a new renewed access token which allows access to the protected resources. You can request for the new access tokens by using the Refresh Token in Web API until the Refresh Token is valid.",
   "get_started": "Get started",

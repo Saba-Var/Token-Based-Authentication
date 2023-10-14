@@ -19,7 +19,7 @@ const Home = () => {
             data-cy='title'
             className='mt-10 !leading-tight lg:mt-0 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'
           >
-            {t('token_based')} <span className='text-indigo-800'>{t('authentication')}</span>
+            {t('token_based')} <span className='text-blue-700'>{t('authentication')}</span>
           </h1>
 
           <p data-cy='description' className='mt-6 text-lg leading-8 text-gray-600 lg:max-w-xl '>
