@@ -13,7 +13,7 @@ describe('Home page', () => {
   })
 
   it('Should see English as a default language when visiting for the first time', () => {
-    cy.get('@title').should('contain', 'Token-based Authentication')
+    cy.get('@title').should('contain', 'Token-Based Authentication')
     cy.get('@description').should(
       'contain',
       'A Refresh Token is a special kind of token that can be used to obtain a new renewed access token which allows access to the protected resources. You can request for the new access tokens by using the Refresh Token in Web API until the Refresh Token is valid.',
@@ -47,7 +47,7 @@ describe('Home page', () => {
   it('Should redirect to home page when click on the home icon', () => {
     cy.get('@navbar-log-in').click()
     cy.homeIconNavigation()
-    cy.get('@title').should('contain', 'Token-based Authentication')
+    cy.get('@title').should('contain', 'Token-Based Authentication')
   })
 
   it("Should change language to Georgian when clicking on 'ქართული' on the language selector", () => {
