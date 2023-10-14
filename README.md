@@ -45,9 +45,9 @@ Token-Based Authentication app offers a secure and efficient way to register and
 
 - <img style="padding-right:10px;" align="left"  src="readme/assets/React.png"   height="20"/> [[react @18.2.0]](https://reactjs.org/) - A JavaScript library for building user interfaces
 
-- <img style="padding-right:10px;" align="left"  src="readme/assets/Typescript.png"   height="20"/> [[typescript @5.0.2]](https://www.typescriptlang.org/) - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- <img style="padding-right:10px;" align="left"  src="readme/assets/Typescript.png"   height="20"/> [[typescript @5.0.2]](https://www.typescriptlang.org/) - Strongly typed programming language that builds on JavaScript
 
-- <img style="padding-right:10px;" align="left"  src="readme/assets/TailwindLogo.png"   height="15"/> [[tailwindcss @3.3.3]](https://tailwindcss.com/) - Tailwind CSS is a utility-first CSS framework for rapidly building modern websites without ever leaving your HTML
+- <img style="padding-right:10px;" align="left"  src="readme/assets/TailwindLogo.png"   height="15"/> [[tailwindcss @3.3.3]](https://tailwindcss.com/) - Utility-first CSS framework for rapidly building modern websites
 
 - <img style="padding-right:10px;" align="left"  src="readme/assets/Cypress.png"   height="20"/> [[cypress @13.3.0]](https://www.cypress.io/) - E2E testing framework
 
