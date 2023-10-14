@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { AuthRoutesWithoutNewPassword } from './types'
+import { useAutomaticProfileRedirect } from '@/hooks'
 import type { AuthQuestionProps } from '@/types'
 import { useTranslation } from 'react-i18next'
 import { useMemo } from 'react'
@@ -8,6 +9,7 @@ const AuthPageWrapper = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const { t } = useTranslation()
+  useAutomaticProfileRedirect()
 
   const authQuestionOptions: Record<AuthRoutesWithoutNewPassword, AuthQuestionProps> = {
     'log-in': {
