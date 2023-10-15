@@ -44,7 +44,7 @@ const Profile = () => {
       />
 
       {user.username && !isEmailActivating ? (
-        <div className='mt-36 md:mt-44 lg:mb-14 3xl:mb-0 3xl:mt-52 bg-slate-200 p-4 md:p-12 rounded-lg max-w-2xl xl:max-w-3xl mx-auto'>
+        <div className='mt-36 md:mt-44 animate-slide-in-elliptic-top-fwd lg:mb-14 3xl:mb-0 3xl:mt-52 bg-slate-200 p-4 md:p-12 rounded-lg max-w-2xl xl:max-w-3xl mx-auto'>
           <div className='flex justify-center'>
             <img
               className={`${
