@@ -1,5 +1,5 @@
 {
-  "name": "token-based-authentication-demo",
+  "name": "token-based-authentication",
   "private": true,
   "version": "0.0.0",
   "type": "module",

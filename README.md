@@ -179,9 +179,9 @@ Branch names are quite the similar to commit types but with different syntax. Ex
 fix/password_change_request_redirect_uri
 ┌── ┌───────────────────────────────────
 │   │
-│   └─────> Feature branch type
+│   └─────> Feature branch name written in camel_case
 │
-└─────────> Feature branch type written in camel_case
+└─────────> Feature branch type
 ```
 
 #
