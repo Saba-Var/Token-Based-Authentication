@@ -2,6 +2,8 @@ import type { Preview } from '@storybook/react'
 import { I18nextProvider } from 'react-i18next'
 import { MemoryRouter } from 'react-router'
 import React, { Suspense } from 'react'
+import { Provider } from 'react-redux'
+import { store } from '../src/store'
 import i18n from '../i18n'
 import '../src/index.css'
 
@@ -21,7 +23,9 @@ const preview: Preview = {
       <Suspense fallback={<div>loading...</div>}>
         <MemoryRouter>
           <I18nextProvider i18n={i18n}>
-            <Story />
+            <Provider store={store}>
+              <Story />
+            </Provider>
           </I18nextProvider>
         </MemoryRouter>
       </Suspense>
