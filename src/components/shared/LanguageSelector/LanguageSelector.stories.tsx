@@ -24,4 +24,4 @@ export default meta
 
 type Story = StoryObj<typeof LanguageSelector>
 
-export const AuthQuestionStory: Story = {}
+export const LanguageSelectorStory: Story = {}

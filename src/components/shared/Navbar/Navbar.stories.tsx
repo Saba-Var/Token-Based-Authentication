@@ -17,4 +17,4 @@ export default meta
 
 type Story = StoryObj<typeof Navbar>
 
-export const AuthQuestionStory: Story = {}
+export const NavbarStory: Story = {}
